@@ -9,6 +9,8 @@
       content="PicSum は Windows向けデスクトップ画像ビューアアプリ。HEIC/HEIF も含む画像をフォルダ単位でサクサク閲覧できます。Microsoft Store で配布中。"
     />
     <meta name="color-scheme" content="dark light" />
+    <link rel="icon" href="./assets/icon.png" />
+    <link rel="apple-touch-icon" href="./assets/icon.png" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -17,7 +19,9 @@
     <header class="site-header">
       <div class="container header-inner">
         <div class="brand">
-          <div class="logo" aria-hidden="true">PS</div>
+          <div class="logo">
+            <img src="./assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
+          </div>
           <div class="brand-text">
             <div class="brand-name">PicSum</div>
             <div class="brand-sub">Windows デスクトップ画像ビューア</div>
@@ -25,9 +29,8 @@
         </div>
         <nav class="nav" aria-label="主要ナビゲーション">
           <a href="#features">特徴</a>
-          <a href="#screenshots">画面</a>
+          <a href="#formats">対応形式</a>
           <a href="#download">ダウンロード</a>
-          <a href="#faq">FAQ</a>
         </nav>
       </div>
     </header>
@@ -37,10 +40,10 @@
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Windows 10/11 対応</p>
-            <h1>フォルダの写真を、気持ちよく見る。</h1>
+            <h1>高速・快適な画像ビューア</h1>
             <p class="lead">
-              <strong>PicSum</strong> は HEIC/HEIF を含む画像をフォルダ単位で閲覧できる、軽量なデスクトップ画像ビューアです。
-              サムネイル・情報パネル・お気に入りで、整理しながら素早く確認できます。
+              <strong>PicSum</strong> は GPU を使用した高速な描画と、徹底的にチューニングした高速なファイル読み込み/高速起動で
+              画像の閲覧体験を改善する Windows デスクトップ画像ビューアです。
             </p>
 
             <div class="cta-row">
@@ -56,9 +59,9 @@
             </div>
 
             <ul class="meta">
-              <li>対応: JPG / PNG / GIF / WebP / HEIC(環境依存)</li>
-              <li>操作: ホイールズーム / キー移動 / フルスクリーン</li>
-              <li>用途: iPhone写真の確認、素材チェック、選別</li>
+              <li>GPU を使用した高速な描画</li>
+              <li>タブ操作 / パンくずアドレスバー</li>
+              <li>iPhoneで撮影した画像（HEIC/HEIF）も表示</li>
             </ul>
           </div>
 
@@ -72,17 +75,6 @@
                 onerror="this.closest('.shot').remove()"
               />
             </div>
-            <div class="shot-fallback" role="img" aria-label="スクリーンショット（未設定）">
-              <div class="fallback-inner">
-                <div class="fallback-title">スクリーンショット</div>
-                <div class="fallback-desc">
-                  `docs/assets/screenshot.png` を置くとここに表示されます。
-                </div>
-              </div>
-            </div>
-            <div class="card-note">
-              ※ HEIC は OS 拡張やコーデックの有無で挙動が変わる場合があります。
-            </div>
           </div>
         </div>
       </section>
@@ -92,60 +84,62 @@
           <h2>特徴</h2>
           <div class="features">
             <article class="feature">
-              <h3>フォルダ閲覧が速い</h3>
-              <p>フォルダを開くとサムネイル一覧が表示され、矢印キーやクリックで素早く切り替えできます。</p>
+              <h3>GPUを使用した高速な描画</h3>
+              <p>表示の引っかかりを抑え、快適な閲覧を目指します。</p>
             </article>
             <article class="feature">
-              <h3>情報パネル</h3>
-              <p>ファイルサイズ、撮影日時、解像度などを確認しながら選別できます。</p>
+              <h3>高速なファイル読み込み / 高速起動</h3>
+              <p>徹底的にチューニングし、起動から切り替えまでをスムーズにします。</p>
             </article>
             <article class="feature">
-              <h3>お気に入り/選別</h3>
-              <p>気に入った写真をマークして、後からまとめて見返せます。</p>
+              <h3>見開き表示に対応</h3>
+              <p>2ページ/2枚を並べて表示でき、比較やレイアウト確認にも便利です。</p>
             </article>
             <article class="feature">
-              <h3>扱いやすい操作</h3>
-              <p>ズーム・回転・フルスクリーンなど、画像ビューアに欲しい基本操作を揃えています。</p>
+              <h3>iPhoneで撮影した画像も表示できる</h3>
+              <p>HEIC/HEIF など、スマホ由来の形式も扱えます。</p>
             </article>
             <article class="feature">
-              <h3>Windows向け</h3>
-              <p>Windows 10/11 のデスクトップで動作するアプリとして、マウス/キーボード操作に最適化します。</p>
+              <h3>GoogleChromeと遜色ないタブ操作</h3>
+              <p>複数フォルダ/ビューをタブで切り替え、作業を中断しません。</p>
             </article>
             <article class="feature">
-              <h3>軽量</h3>
-              <p>起動・切り替え・拡大縮小が引っかからないことを重視した設計を目指します。</p>
+              <h3>パンくずリストのアドレスバー</h3>
+              <p>エクスプローラーのように階層を辿れて、目的の場所へ素早く移動できます。</p>
+            </article>
+            <article class="feature">
+              <h3>フォルダへのアクセスが簡単</h3>
+              <p>よく開くフォルダの一覧、フォルダの閲覧履歴などからすぐに開けます。</p>
+            </article>
+            <article class="feature">
+              <h3>タグ付けによるファイルの整理</h3>
+              <p>タグによる分類で、ファイル整理や後からの検索に役立ちます。</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="screenshots" class="section alt">
+      <section id="formats" class="section alt">
         <div class="container">
-          <h2>画面</h2>
+          <h2>対応画像形式</h2>
           <p class="section-lead">
-            ここはスクリーンショットを差し替えて運用できます。画像は <code>docs/assets/</code> に置いて参照します。
+            次の形式に対応しています。
           </p>
 
-          <div class="gallery">
-            <figure class="gallery-item">
-              <img
-                src="./assets/screenshot.png"
-                alt="スクリーンショット"
-                loading="lazy"
-                decoding="async"
-                onerror="this.closest('figure').remove()"
-              />
-              <figcaption>メイン画面（例）</figcaption>
-            </figure>
-            <figure class="gallery-item placeholder" aria-label="追加スクリーンショット枠">
-              <div class="ph">追加のスクショ枠</div>
-              <figcaption>ここに2枚目を追加できます</figcaption>
-            </figure>
-            <figure class="gallery-item placeholder" aria-label="追加スクリーンショット枠">
-              <div class="ph">追加のスクショ枠</div>
-              <figcaption>ここに3枚目を追加できます</figcaption>
-            </figure>
-          </div>
+          <ul class="formats" aria-label="対応画像形式一覧">
+            <li>Avif</li>
+            <li>Bmp</li>
+            <li>Gif</li>
+            <li>Heic</li>
+            <li>Heif</li>
+            <li>Ico</li>
+            <li>Jfif</li>
+            <li>Jpeg</li>
+            <li>Jpg</li>
+            <li>Png</li>
+            <li>Svg</li>
+            <li>Webp</li>
+          </ul>
         </div>
       </section>
 
@@ -191,44 +185,15 @@
         </div>
       </section>
 
-      <section id="faq" class="section alt">
-        <div class="container">
-          <h2>FAQ</h2>
-          <div class="faq">
-            <details>
-              <summary>HEICが開けないことがあります</summary>
-              <div class="answer">
-                <p>
-                  Windows側の拡張（HEIF/HEVC コーデック）の有無によっては、HEICの表示ができない場合があります。
-                  その場合は Microsoft Store の拡張導入、またはJPEGへの変換をご検討ください。
-                </p>
-              </div>
-            </details>
-            <details>
-              <summary>オフラインで使えますか？</summary>
-              <div class="answer">
-                <p>デスクトップアプリとしてローカル画像を扱う想定のため、基本的にオフラインで利用できます。</p>
-              </div>
-            </details>
-            <details>
-              <summary>このページはどこを編集すれば良いですか？</summary>
-              <div class="answer">
-                <p>
-                  <code>docs/index.html</code> の「ダウンロード」セクションに配布URLを入れ、
-                  スクリーンショットを <code>docs/assets/screenshot.png</code> に置いてください。
-                </p>
-              </div>
-            </details>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
         <div class="footer-left">
           <div class="brand-mini">
-            <div class="logo" aria-hidden="true">PS</div>
+            <div class="logo">
+              <img src="./assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
+            </div>
             <div>
               <div class="brand-name">PicSum</div>
               <div class="brand-sub">Windows デスクトップ画像ビューア</div>
