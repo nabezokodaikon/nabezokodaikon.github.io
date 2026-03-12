@@ -297,6 +297,38 @@ h2 {
   font-size: 13px;
 }
 
+.shortcuts {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+@media (max-width: 920px) {
+  .shortcuts {
+    grid-template-columns: 1fr;
+  }
+}
+.shortcuts li {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: var(--page);
+  color: var(--muted);
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.shortcuts code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+  background: rgba(12, 12, 14, 0.04);
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
 .download-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
