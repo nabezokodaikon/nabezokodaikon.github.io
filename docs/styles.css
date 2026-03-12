@@ -237,6 +237,23 @@ h1 {
   border-bottom: 1px solid var(--border);
 }
 
+.license-item {
+  padding: 12px 0;
+}
+.license-item + .license-item {
+  border-top: 1px solid var(--border);
+}
+.license-item h2 {
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+.license-item ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
 h2 {
   margin: 0 0 12px;
   letter-spacing: -0.3px;
