@@ -246,7 +246,23 @@
     </footer>
 
     <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
+      (function () {
+        var lang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+        lang = (lang || "").toLowerCase();
+
+        // 日本語以外の環境なら英語版へリダイレクト
+        if (lang && lang.indexOf("ja") !== 0) {
+          var path = location.pathname;
+          var base = path.replace(/index\.html?$/i, "");
+          location.replace(base + "index-en.html" + location.search + location.hash);
+          return;
+        }
+
+        var y = document.getElementById("y");
+        if (y) {
+          y.textContent = new Date().getFullYear();
+        }
+      })();
     </script>
   </body>
 </html>
