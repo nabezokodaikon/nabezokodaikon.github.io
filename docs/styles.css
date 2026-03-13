@@ -315,43 +315,26 @@ h2 {
   font-weight: 650;
   font-size: 13px;
 }
-
-.format-notes {
-  margin-top: 20px;
+.formats li.format-ext {
   display: flex;
-  flex-direction: column;
-  gap: 0;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
 }
-.format-note {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
-  font-size: 13px;
-  background: var(--page);
-}
-.format-note + .format-note {
-  border-top: 1px solid var(--border);
-}
-.format-note-label {
+.format-name {
   font-weight: 700;
-  color: var(--text);
-  min-width: 80px;
-  flex-shrink: 0;
 }
-.format-note-text {
+.format-req {
+  font-size: 11px;
+  font-weight: 400;
   color: var(--muted);
-}
-.format-note-text a {
-  color: var(--text);
   text-decoration: underline;
   text-decoration-color: var(--border);
   text-underline-offset: 2px;
 }
-.format-note-text a:hover {
+.format-req:hover {
+  color: var(--text);
   text-decoration-color: var(--text);
 }
 
