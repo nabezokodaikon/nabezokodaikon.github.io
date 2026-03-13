@@ -9,6 +9,11 @@
   --max: 1100px;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
 * {
   box-sizing: border-box;
 }
