@@ -316,6 +316,46 @@ h2 {
   font-size: 13px;
 }
 
+.format-notes {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.format-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  font-size: 13px;
+  background: var(--page);
+}
+.format-note + .format-note {
+  border-top: 1px solid var(--border);
+}
+.format-note-label {
+  font-weight: 700;
+  color: var(--text);
+  min-width: 80px;
+  flex-shrink: 0;
+}
+.format-note-text {
+  color: var(--muted);
+}
+.format-note-text a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 2px;
+}
+.format-note-text a:hover {
+  text-decoration-color: var(--text);
+}
+
+
 .shortcuts {
   list-style: none;
   padding: 0;
