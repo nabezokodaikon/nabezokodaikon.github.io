@@ -12,6 +12,79 @@
     <link rel="icon" href="./assets/icon.png" />
     <link rel="apple-touch-icon" href="./assets/icon.png" />
     <link rel="stylesheet" href="./styles.css" />
+    <style>
+      /* ライセンスボタン */
+      .license-toggle-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3em;
+        background: none;
+        border: 1px solid currentColor;
+        border-radius: 4px;
+        padding: 0.1em 0.55em;
+        font: inherit;
+        font-size: 0.9em;
+        color: inherit;
+        cursor: pointer;
+        text-decoration: none;
+        opacity: 0.8;
+        transition: opacity 0.15s, background 0.15s;
+        margin-top: 0.2em;
+      }
+      .license-toggle-btn:hover,
+      .license-toggle-btn:focus {
+        opacity: 1;
+        background: rgba(128, 128, 128, 0.12);
+        outline: none;
+      }
+      .license-toggle-btn svg {
+        flex-shrink: 0;
+        transition: transform 0.2s ease;
+      }
+      .license-toggle-btn.active svg {
+        transform: rotate(180deg);
+      }
+
+      /* インライン表示エリア */
+      .license-details {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease-out;
+        overflow: hidden;
+        margin-top: 0.5rem;
+        background: rgba(128, 128, 128, 0.05);
+        border-radius: 6px;
+      }
+      .license-details.active {
+        grid-template-rows: 1fr;
+        border: 1px solid rgba(128, 128, 128, 0.2);
+      }
+      .license-details-content {
+        min-height: 0;
+        padding: 0 1rem;
+        transition: padding 0.3s ease-out;
+      }
+      .license-details.active .license-details-content {
+        padding: 1rem;
+      }
+      .license-details pre {
+        margin: 0;
+        white-space: pre-wrap;
+        word-break: break-all;
+        font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        font-size: 0.85rem;
+        line-height: 1.6;
+        opacity: 0.9;
+      }
+      .license-details-title {
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+        display: block;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+        padding-bottom: 0.4rem;
+      }
+    </style>
   </head>
   <body>
     <a class="skip" href="#main">本文へスキップ</a>
@@ -42,7 +115,18 @@
             <h2>MemoryPack</h2>
             <ul>
               <li><a href="https://github.com/Cysharp/MemoryPack" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
-              <li><a href="https://licenses.nuget.org/MIT" target="_blank" rel="noreferrer">MIT ライセンス</a></li>
+              <li>
+                <button class="license-toggle-btn" data-license="mit" aria-expanded="false">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
+                  MIT ライセンス
+                </button>
+                <div class="license-details" id="details-mit">
+                  <div class="license-details-content">
+                    <span class="license-details-title">MIT License</span>
+                    <pre></pre>
+                  </div>
+                </div>
+              </li>
             </ul>
           </section>
 
@@ -50,7 +134,18 @@
             <h2>MetadataExtractor</h2>
             <ul>
               <li><a href="https://github.com/drewnoakes/metadata-extractor-dotnet" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
-              <li><a href="https://licenses.nuget.org/Apache-2.0" target="_blank" rel="noreferrer">Apache 2.0 ライセンス</a></li>
+              <li>
+                <button class="license-toggle-btn" data-license="apache2" aria-expanded="false">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
+                  Apache 2.0 ライセンス
+                </button>
+                <div class="license-details" id="details-apache2">
+                  <div class="license-details-content">
+                    <span class="license-details-title">Apache License, Version 2.0</span>
+                    <pre></pre>
+                  </div>
+                </div>
+              </li>
             </ul>
           </section>
 
@@ -58,7 +153,18 @@
             <h2>NLog</h2>
             <ul>
               <li><a href="https://nlog-project.org/" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
-              <li><a href="https://licenses.nuget.org/BSD-3-Clause" target="_blank" rel="noreferrer">BSD 3-Clause ライセンス</a></li>
+              <li>
+                <button class="license-toggle-btn" data-license="bsd3" aria-expanded="false">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
+                  BSD 3-Clause ライセンス
+                </button>
+                <div class="license-details" id="details-bsd3">
+                  <div class="license-details-content">
+                    <span class="license-details-title">BSD 3-Clause License</span>
+                    <pre></pre>
+                  </div>
+                </div>
+              </li>
             </ul>
           </section>
 
@@ -66,7 +172,18 @@
             <h2>OpenCvSharp4.Extensions</h2>
             <ul>
               <li><a href="https://github.com/shimat/opencvsharp" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
-              <li><a href="https://licenses.nuget.org/Apache-2.0" target="_blank" rel="noreferrer">Apache 2.0 ライセンス</a></li>
+              <li>
+                <button class="license-toggle-btn" data-license="apache2-opencv-ext" aria-expanded="false">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
+                  Apache 2.0 ライセンス
+                </button>
+                <div class="license-details" id="details-apache2-opencv-ext">
+                  <div class="license-details-content">
+                    <span class="license-details-title">Apache License, Version 2.0</span>
+                    <pre></pre>
+                  </div>
+                </div>
+              </li>
             </ul>
           </section>
 
@@ -74,7 +191,18 @@
             <h2>OpenCvSharp4.Windows</h2>
             <ul>
               <li><a href="https://github.com/shimat/opencvsharp" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
-              <li><a href="https://licenses.nuget.org/Apache-2.0" target="_blank" rel="noreferrer">Apache 2.0 ライセンス</a></li>
+              <li>
+                <button class="license-toggle-btn" data-license="apache2-opencv-win" aria-expanded="false">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
+                  Apache 2.0 ライセンス
+                </button>
+                <div class="license-details" id="details-apache2-opencv-win">
+                  <div class="license-details-content">
+                    <span class="license-details-title">Apache License, Version 2.0</span>
+                    <pre></pre>
+                  </div>
+                </div>
+              </li>
             </ul>
           </section>
 
@@ -82,7 +210,18 @@
             <h2>SkiaSharp.Views.WindowsForms</h2>
             <ul>
               <li><a href="https://github.com/mono/SkiaSharp" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
-              <li><a href="https://licenses.nuget.org/MIT" target="_blank" rel="noreferrer">MIT ライセンス</a></li>
+              <li>
+                <button class="license-toggle-btn" data-license="mit-skia" aria-expanded="false">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
+                  MIT ライセンス
+                </button>
+                <div class="license-details" id="details-mit-skia">
+                  <div class="license-details-content">
+                    <span class="license-details-title">MIT License</span>
+                    <pre></pre>
+                  </div>
+                </div>
+              </li>
             </ul>
           </section>
 
@@ -90,7 +229,18 @@
             <h2>Svg</h2>
             <ul>
               <li><a href="https://github.com/svg-net/SVG" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
-              <li><a href="https://licenses.nuget.org/MS-PL" target="_blank" rel="noreferrer">MS-PL ライセンス</a></li>
+              <li>
+                <button class="license-toggle-btn" data-license="mspl" aria-expanded="false">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
+                  MS-PL ライセンス
+                </button>
+                <div class="license-details" id="details-mspl">
+                  <div class="license-details-content">
+                    <span class="license-details-title">Microsoft Public License (Ms-PL)</span>
+                    <pre></pre>
+                  </div>
+                </div>
+              </li>
             </ul>
           </section>
 
@@ -98,9 +248,18 @@
             <h2>System.Data.SQLite.Core</h2>
             <ul>
               <li><a href="https://system.data.sqlite.org/home/doc/trunk/www/index.md" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
-              <li><a href="https://www.sqlite.org/copyright.html" target="_blank" rel="noreferrer">
+              <li>
+                <button class="license-toggle-btn" data-license="sqlite" aria-expanded="false">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
                   著作権表示
-                </a></li>
+                </button>
+                <div class="license-details" id="details-sqlite">
+                  <div class="license-details-content">
+                    <span class="license-details-title">SQLite Copyright / Public Domain</span>
+                    <pre></pre>
+                  </div>
+                </div>
+              </li>
             </ul>
           </section>
 
@@ -108,7 +267,18 @@
             <h2>ZLinq</h2>
             <ul>
               <li><a href="https://github.com/Cysharp/ZLinq" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
-              <li><a href="https://licenses.nuget.org/MIT" target="_blank" rel="noreferrer">MIT ライセンス</a></li>
+              <li>
+                <button class="license-toggle-btn" data-license="mit-zlinq" aria-expanded="false">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
+                  MIT ライセンス
+                </button>
+                <div class="license-details" id="details-mit-zlinq">
+                  <div class="license-details-content">
+                    <span class="license-details-title">MIT License</span>
+                    <pre></pre>
+                  </div>
+                </div>
+              </li>
             </ul>
           </section>
 
@@ -116,7 +286,18 @@
             <h2>ZLinq.FileSystem</h2>
             <ul>
               <li><a href="https://github.com/Cysharp/ZLinq" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
-              <li><a href="https://licenses.nuget.org/MIT" target="_blank" rel="noreferrer">MIT ライセンス</a></li>
+              <li>
+                <button class="license-toggle-btn" data-license="mit-zlinq-fs" aria-expanded="false">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
+                  MIT ライセンス
+                </button>
+                <div class="license-details" id="details-mit-zlinq-fs">
+                  <div class="license-details-content">
+                    <span class="license-details-title">MIT License</span>
+                    <pre></pre>
+                  </div>
+                </div>
+              </li>
             </ul>
           </section>
         </div>
@@ -156,11 +337,10 @@
           y.textContent = new Date().getFullYear();
         }
 
-        // Smooth scroll for anchor links without changing URL hash
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"], a[href="./index.html"]').forEach(function(anchor) {
           anchor.addEventListener('click', function(e) {
             var href = this.getAttribute('href');
-            
             if (href.startsWith('#')) {
               e.preventDefault();
               if (href === '#') {
@@ -174,8 +354,203 @@
             }
           });
         });
+
+        // 共通のライセンステキスト
+        var commonTexts = {
+          mit: [
+            'MIT License',
+            '',
+            'Copyright (c) <year> <copyright holders>',
+            '',
+            'Permission is hereby granted, free of charge, to any person obtaining a copy',
+            'of this software and associated documentation files (the "Software"), to deal',
+            'in the Software without restriction, including without limitation the rights',
+            'to use, copy, modify, merge, publish, distribute, sublicense, and/or sell',
+            'copies of the Software, and to permit persons to whom the Software is',
+            'furnished to do so, subject to the following conditions:',
+            '',
+            'The above copyright notice and this permission notice (including the next',
+            'paragraph) shall be included in all copies or substantial portions of the',
+            'Software.',
+            '',
+            'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR',
+            'IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,',
+            'FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE',
+            'AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER',
+            'LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,',
+            'OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE',
+            'SOFTWARE.'
+          ].join('\n'),
+          apache2: [
+            'Apache License, Version 2.0, January 2004',
+            'http://www.apache.org/licenses/',
+            '',
+            'TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION',
+            '',
+            '1. Definitions.',
+            '',
+            '"License" shall mean the terms and conditions for use, reproduction,',
+            'and distribution as defined by Sections 1 through 9 of this document.',
+            '',
+            '"Licensor" shall mean the copyright owner or entity authorized by the',
+            'copyright owner that is granting the License.',
+            '',
+            '2. Grant of Copyright License.',
+            'Subject to the terms and conditions of this License, each Contributor',
+            'hereby grants to You a perpetual, worldwide, non-exclusive, no-charge,',
+            'royalty-free, irrevocable copyright license to reproduce, prepare',
+            'Derivative Works of, publicly display, publicly perform, sublicense, and',
+            'distribute the Work and such Derivative Works in Source or Object form.',
+            '',
+            '3. Grant of Patent License.',
+            'Subject to the terms and conditions of this License, each Contributor',
+            'hereby grants to You a perpetual, worldwide, non-exclusive, no-charge,',
+            'royalty-free, irrevocable patent license to make, have made, use, sell,',
+            'and otherwise transfer the Work.',
+            '',
+            '4. Redistribution.',
+            'You may reproduce and distribute copies of the Work or Derivative Works',
+            'thereof in any medium, with or without modifications, provided that You',
+            'meet the following conditions: (a) You must give any other recipients of',
+            'the Work a copy of this License; (b) You must cause any modified files',
+            'to carry prominent notices stating that You changed the files; (c) You',
+            'must retain all copyright, patent, trademark, and attribution notices.',
+            '',
+            '7. Disclaimer of Warranty.',
+            'Unless required by applicable law or agreed to in writing, Licensor provides',
+            'the Work (and each Contributor provides its Contributions) on an "AS IS"',
+            'BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND.',
+            '',
+            '8. Limitation of Liability.',
+            'In no event and under no legal theory shall any Contributor be liable to',
+            'You for damages, including any direct, indirect, special, incidental, or',
+            'consequential damages character arising as a result of this License.'
+          ].join('\n'),
+          bsd3: [
+            'Copyright (c) <year> <owner>.',
+            '',
+            'Redistribution and use in source and binary forms, with or without',
+            'modification, are permitted provided that the following conditions are met:',
+            '',
+            '1. Redistributions of source code must retain the above copyright notice,',
+            '   this list of conditions and the following disclaimer.',
+            '',
+            '2. Redistributions in binary form must reproduce the above copyright notice,',
+            '   this list of conditions and the following disclaimer in the documentation',
+            '   and/or other materials provided with the distribution.',
+            '',
+            '3. Neither the name of the copyright holder nor the names of its contributors',
+            '   may be used to endorse or promote products derived from this software',
+            '   without specific prior written permission.',
+            '',
+            'THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"',
+            'AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE',
+            'IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE',
+            'ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE',
+            'LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR',
+            'CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF',
+            'SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS',
+            'INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN',
+            'CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)',
+            'ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE',
+            'POSSIBILITY OF SUCH DAMAGE.'
+          ].join('\n'),
+          mspl: [
+            'Microsoft Public License (Ms-PL)',
+            '',
+            'This license governs use of the accompanying software. If you use the',
+            'software, you accept this license. If you do not accept the license, do',
+            'not use the software.',
+            '',
+            '1. Definitions',
+            'The terms "reproduce," "reproduction," "derivative works," and "distribution"',
+            'have the same meaning here as under U.S. copyright law. A "contribution" is',
+            'the original software, or any additions or changes to the software.',
+            '',
+            '2. Grant of Rights',
+            '(A) Copyright Grant- Subject to the terms of this license, each contributor',
+            'grants you a non-exclusive, worldwide, royalty-free copyright license to',
+            'reproduce its contribution, prepare derivative works of its contribution,',
+            'and distribute its contribution or any derivative works that you create.',
+            '',
+            '3. Conditions and Limitations',
+            '(A) No Trademark License- This license does not grant you rights to use any',
+            'contributors\' name, logo, or trademarks.',
+            '(B) If you bring a patent claim against any contributor over patents that you',
+            'claim are infringed by the software, your patent license from such contributor',
+            'to the software ends automatically.',
+            '(C) If you distribute any portion of the software, you must retain all',
+            'copyright, patent, trademark, and attribution notices that are present in',
+            'the software.',
+            '(E) The software is licensed "as-is." You bear the risk of using it.'
+          ].join('\n'),
+          sqlite: [
+            'SQLite Is Public Domain',
+            '',
+            'All of the code and documentation in SQLite has been dedicated to the public',
+            'domain by the authors. All code authors, and representatives of the companies',
+            'they work for, have signed affidavits dedicating their contributions to the',
+            'public domain. Anyone is free to copy, modify, publish, use, compile, sell,',
+            'or distribute the original SQLite code, either in source code form or as a',
+            'compiled binary, for any purpose, commercial or non-commercial, and by any means.',
+            '',
+            'All of the deliverable code in SQLite has been written from scratch. No code',
+            'has been taken from other projects or from the open internet. Every line of',
+            'code can be traced back to its original author, and all of those authors have',
+            'public domain dedications on file.',
+            '',
+            'Source: https://www.sqlite.org/copyright.html'
+          ].join('\n')
+        };
+
+        // 個別マッピング
+        var licenseMap = {
+          'mit': commonTexts.mit,
+          'apache2': commonTexts.apache2,
+          'bsd3': commonTexts.bsd3,
+          'apache2-opencv-ext': commonTexts.apache2,
+          'apache2-opencv-win': commonTexts.apache2,
+          'mit-skia': commonTexts.mit,
+          'mspl': commonTexts.mspl,
+          'sqlite': commonTexts.sqlite,
+          'mit-zlinq': commonTexts.mit,
+          'mit-zlinq-fs': commonTexts.mit
+        };
+
+        // 初期化：すべての pre にテキストを流し込む
+        document.querySelectorAll('.license-toggle-btn').forEach(function(btn) {
+          var key = btn.getAttribute('data-license');
+          var text = licenseMap[key];
+          if (text) {
+            var container = btn.nextElementSibling;
+            var pre = container.querySelector('pre');
+            if (pre) pre.textContent = text;
+          }
+
+          // クリックイベント
+          btn.addEventListener('click', function() {
+            var targetId = 'details-' + key;
+            var target = document.getElementById(targetId);
+            var isExpanding = !target.classList.contains('active');
+
+            // すべて閉じる（ひとつだけ開く挙動にする場合）
+            /*
+            document.querySelectorAll('.license-details.active').forEach(function(el) {
+              if (el !== target) {
+                el.classList.remove('active');
+                el.previousElementSibling.classList.remove('active');
+                el.previousElementSibling.setAttribute('aria-expanded', 'false');
+              }
+            });
+            */
+
+            // トグル
+            target.classList.toggle('active');
+            btn.classList.toggle('active');
+            btn.setAttribute('aria-expanded', isExpanding ? 'true' : 'false');
+          });
+        });
       })();
     </script>
   </body>
 </html>
-
