@@ -18,7 +18,7 @@
 
     <header class="site-header">
       <div class="container header-inner">
-        <div class="brand">
+        <a href="./index.html#" class="brand" style="text-decoration: none; color: inherit;">
           <div class="logo">
             <img src="./assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
           </div>
@@ -26,9 +26,9 @@
             <div class="brand-name">PicSum</div>
             <div class="brand-sub">Windows デスクトップ画像ビューア</div>
           </div>
-        </div>
+        </a>
         <nav class="nav" aria-label="ナビゲーション">
-          <a href="#" id="back-link-header">トップページ</a>
+          <a href="./index.html">トップページ</a>
         </nav>
       </div>
     </header>
@@ -134,7 +134,7 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <div class="footer-left">
-          <div class="brand-mini">
+          <a href="./index.html#" class="brand-mini" style="text-decoration: none; color: inherit;">
             <div class="logo">
               <img src="./assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
             </div>
@@ -142,12 +142,17 @@
               <div class="brand-name">PicSum</div>
               <div class="brand-sub">Windows デスクトップ画像ビューア</div>
             </div>
-          </div>
+          </a>
         </div>
-        <div class="footer-right"></div>
+        <div class="footer-right">
+          <a href="#">先頭に戻る</a>
+        </div>
       </div>
       <div class="container fineprint">
-        <span>© <span id="y"></span> nabezokodaikon</span>
+        <span>© <span id="y"></span> nabezokodaikon</span><br />
+        <span><a href="./privacy.html">プライバシーポリシー</a></span><br />
+        <span><a href="./third-party-licenses.html">サードパーティーライセンス</a></span><br />
+        <span>免責事項: 本ソフトウェアの使用により生じた損害について、作者は一切の責任を負いません。個人の責任においてご利用ください。</span>
       </div>
     </footer>
 
@@ -157,45 +162,6 @@
         if (y) {
           y.textContent = new Date().getFullYear();
         }
-
-        function setupBackLink(id) {
-          var backLink = document.getElementById(id);
-          if (!backLink) return;
-
-          backLink.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            var ref = document.referrer || "";
-            var target = "";
-
-            try {
-              var u = new URL(ref);
-              var path = (u.pathname || "").toLowerCase();
-
-              if (path.indexOf("index-en.html") !== -1) {
-                target = "./index-en.html";
-              } else if (path.indexOf("index.html") !== -1) {
-                target = "./index.html";
-              }
-            } catch (err) {
-              // ignore parse errors and fall through to language-based fallback
-            }
-
-            if (!target) {
-              var lang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
-              lang = (lang || "").toLowerCase();
-              if (lang.indexOf("ja") === 0) {
-                target = "./index.html";
-              } else {
-                target = "./index-en.html";
-              }
-            }
-
-            window.location.href = target;
-          });
-        }
-
-        setupBackLink("back-link-header");
       })();
     </script>
   </body>
