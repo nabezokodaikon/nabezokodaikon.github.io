@@ -62,7 +62,7 @@
           </div>
 
           <div class="hero-card" aria-label="アプリのスクリーンショット">
-            <div class="shot">
+            <div class="shot" id="heroShot" role="button" tabindex="0" aria-label="スクリーンショットを拡大表示">
               <img
                 src="./assets/screenshot.png"
                 alt="画像ビューアアプリの画面（サムネイルと情報パネル）"
@@ -252,11 +252,71 @@
       </div>
     </footer>
 
+    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-label="拡大画像">
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose" aria-label="閉じる">&times;</button>
+        <img id="modalImage" src="" alt="拡大されたスクリーンショット" />
+      </div>
+    </div>
+
     <script>
       (function () {
         var y = document.getElementById("y");
         if (y) {
           y.textContent = new Date().getFullYear();
+        }
+
+        // Lightbox Modal script
+        var modal = document.getElementById("imageModal");
+        var heroShot = document.getElementById("heroShot");
+        var modalImg = document.getElementById("modalImage");
+        var closeBtn = document.getElementById("modalClose");
+
+        if (modal && heroShot && modalImg) {
+          var sourceImg = heroShot.querySelector("img");
+          
+          function openModal() {
+            if (sourceImg) {
+              modalImg.src = sourceImg.src;
+              modal.classList.add("show");
+              document.body.style.overflow = "hidden"; // Prevent background scrolling
+              closeBtn.focus();
+            }
+          }
+
+          function closeModal() {
+            modal.classList.remove("show");
+            document.body.style.overflow = "";
+            heroShot.focus(); // Return focus
+            
+            // Wait for transition before hiding completely
+            setTimeout(function() {
+              if (!modal.classList.contains("show")) {
+                modalImg.src = "";
+              }
+            }, 200);
+          }
+
+          heroShot.addEventListener("click", openModal);
+          heroShot.addEventListener("keydown", function(e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              openModal();
+            }
+          });
+
+          closeBtn.addEventListener("click", closeModal);
+          modal.addEventListener("click", function(e) {
+            if (e.target === modal) {
+              closeModal();
+            }
+          });
+
+          document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape" && modal.classList.contains("show")) {
+              closeModal();
+            }
+          });
         }
       })();
     </script>
