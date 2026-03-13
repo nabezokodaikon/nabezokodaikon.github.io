@@ -163,6 +163,22 @@
         if (y) {
           y.textContent = new Date().getFullYear();
         }
+
+        // Smooth scroll for anchor links without changing URL hash
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+          anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            var targetId = this.getAttribute('href');
+            if (targetId === '#') {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+              var targetElement = document.querySelector(targetId);
+              if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+              }
+            }
+          });
+        });
       })();
     </script>
   </body>
