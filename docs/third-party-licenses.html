@@ -18,7 +18,7 @@
 
     <header class="site-header">
       <div class="container header-inner">
-        <a href="./index.html#" class="brand" style="text-decoration: none; color: inherit;">
+        <a href="./index.html" class="brand" style="text-decoration: none; color: inherit;">
           <div class="logo">
             <img src="./assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
           </div>
@@ -134,7 +134,7 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <div class="footer-left">
-          <a href="./index.html#" class="brand-mini" style="text-decoration: none; color: inherit;">
+          <a href="./index.html" class="brand-mini" style="text-decoration: none; color: inherit;">
             <div class="logo">
               <img src="./assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
             </div>
@@ -165,16 +165,19 @@
         }
 
         // Smooth scroll for anchor links without changing URL hash
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        document.querySelectorAll('a[href^="#"], a[href="./index.html"]').forEach(function(anchor) {
           anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            var targetId = this.getAttribute('href');
-            if (targetId === '#') {
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else {
-              var targetElement = document.querySelector(targetId);
-              if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
+            var href = this.getAttribute('href');
+            
+            if (href.startsWith('#')) {
+              e.preventDefault();
+              if (href === '#') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              } else {
+                var targetElement = document.querySelector(href);
+                if (targetElement) {
+                  targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
               }
             }
           });
