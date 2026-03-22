@@ -360,7 +360,7 @@
           mit: [
             'MIT License',
             '',
-            'Copyright (c) <year> <copyright holders>',
+            'Copyright (c) {copyright}',
             '',
             'Permission is hereby granted, free of charge, to any person obtaining a copy',
             'of this software and associated documentation files (the "Software"), to deal',
@@ -427,7 +427,7 @@
             'consequential damages character arising as a result of this License.'
           ].join('\n'),
           bsd3: [
-            'Copyright (c) <year> <owner>.',
+            'Copyright (c) {copyright}.',
             '',
             'Redistribution and use in source and binary forms, with or without',
             'modification, are permitted provided that the following conditions are met:',
@@ -476,23 +476,27 @@
 
         // 個別マッピング
         var licenseMap = {
-          'mit': commonTexts.mit,
-          'apache2': commonTexts.apache2,
-          'bsd3': commonTexts.bsd3,
-          'apache2-opencv-ext': commonTexts.apache2,
-          'apache2-opencv-win': commonTexts.apache2,
-          'mit-skia': commonTexts.mit,
-          'mit-svg-skia': commonTexts.mit,
-          'sqlite': commonTexts.sqlite,
-          'mit-zlinq': commonTexts.mit,
-          'mit-zlinq-fs': commonTexts.mit
+          'mit': { text: commonTexts.mit, copyright: '2022 Yoshifumi Kawai / Cysharp, Inc.' },
+          'apache2': { text: commonTexts.apache2 },
+          'bsd3': { text: commonTexts.bsd3, copyright: '2004-2024 Jaroslaw Kowalski, Kim Christensen, Julian Verdurmen' },
+          'apache2-opencv-ext': { text: commonTexts.apache2 },
+          'apache2-opencv-win': { text: commonTexts.apache2 },
+          'mit-skia': { text: commonTexts.mit, copyright: '2015-2016 Xamarin, Inc, Copyright (c) 2017-2018 Microsoft Corp.' },
+          'mit-svg-skia': { text: commonTexts.mit, copyright: '2020 Wiesław Šoltés' },
+          'sqlite': { text: commonTexts.sqlite },
+          'mit-zlinq': { text: commonTexts.mit, copyright: '2020 Yoshifumi Kawai / Cysharp, Inc.' },
+          'mit-zlinq-fs': { text: commonTexts.mit, copyright: '2020 Yoshifumi Kawai / Cysharp, Inc.' }
         };
 
         // 初期化：すべての pre にテキストを流し込む
         document.querySelectorAll('.license-toggle-btn').forEach(function(btn) {
           var key = btn.getAttribute('data-license');
-          var text = licenseMap[key];
-          if (text) {
+          var entry = licenseMap[key];
+          if (entry) {
+            var text = entry.text;
+            if (entry.copyright) {
+              text = text.replace('{copyright}', entry.copyright);
+            }
             var container = btn.nextElementSibling;
             var pre = container.querySelector('pre');
             if (pre) pre.textContent = text;
