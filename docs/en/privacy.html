@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PicSum - Privacy Policy</title>
+    <meta
+      name="description"
+      content="Privacy Policy for PicSum. PicSum does not collect any personal information or data."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="icon" href="../assets/icon.png" />
+    <link rel="apple-touch-icon" href="../assets/icon.png" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="../index.html" class="brand" style="text-decoration: none; color: inherit;">
+          <div class="logo">
+            <img src="../assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
+          </div>
+          <div class="brand-text">
+            <div class="brand-name">PicSum</div>
+            <div class="brand-sub">Windows Desktop Image Viewer</div>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="./index.html">Top Page</a>
+          <a href="../privacy.html" class="lang-switch" onclick="sessionStorage.setItem('lang-selected', 'ja')">日本語</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <h1>Privacy Policy</h1>
+
+          <p>
+            PicSum ("the App") does not collect any personal information or data from users. This Privacy Policy explains that no information is collected when using the App.
+          </p>
+
+          <h2>1. Collection of Information</h2>
+          <p>The App does not collect any personal information or usage data from users.</p>
+          <ul class="small">
+            <li>No account creation or entry of personal information is required.</li>
+            <li>No data regarding device information or App usage is collected.</li>
+          </ul>
+
+          <h2>2. Provision of Information to Third Parties</h2>
+          <p>
+            The App does not provide personal information or any other data to third parties. Since no information is collected, there is no coordination with external service providers or data provision to third parties.
+          </p>
+
+          <h2>3. User Rights</h2>
+          <p>
+            Since the App does not collect users' personal information, there is no need to exercise rights related to personal information (access, correction, deletion, etc.).
+          </p>
+
+          <h2>4. Changes to the Privacy Policy</h2>
+          <p>
+            Because the App does not collect any information from users, there will basically be no changes to the Privacy Policy. However, if new features are added to the App in the future and changes to the Privacy Policy become necessary, they will be notified on this page.
+          </p>
+
+          <h2>5. Inquiry</h2>
+          <p>If you have any questions regarding the Privacy Policy, please contact us at the following address.</p>
+          <p class="small">
+            Email:
+            <a href="mailto:nabezoko.daikon@gmail.com">nabezoko.daikon@gmail.com</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <a href="./index.html" class="brand-mini" style="text-decoration: none; color: inherit;">
+            <div class="logo">
+              <img src="../assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
+            </div>
+            <div>
+              <div class="brand-name">PicSum</div>
+              <div class="brand-sub">Windows Desktop Image Viewer</div>
+            </div>
+          </a>
+        </div>
+        <div class="footer-right">
+          <a href="#">Back to top</a>
+        </div>
+      </div>
+      <div class="container fineprint">
+        <span>© <span id="y"></span> nabezokodaikon</span><br />
+        <span><a href="./privacy.html">Privacy Policy</a></span><br />
+        <span><a href="./third-party-licenses.html">Third-party Licenses</a></span><br />
+        <span>Usage License: We grant a non-exclusive, non-transferable right to install and use this software on devices you own, in accordance with the Microsoft Store Terms of Service.</span><br />
+        <span>Disclaimer: The author is not responsible for any damage caused by the use of this software. Use at your own risk.</span>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var y = document.getElementById("y");
+        if (y) {
+          y.textContent = new Date().getFullYear();
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"], a[href="./index.html"]').forEach(function(anchor) {
+          anchor.addEventListener('click', function(e) {
+            var href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+              e.preventDefault();
+              if (href === '#') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              } else {
+                var targetElement = document.querySelector(href);
+                if (targetElement) {
+                  targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+              }
+            }
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

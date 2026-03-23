@@ -33,6 +33,7 @@
           <a href="#mouse">マウス操作</a>
           <a href="#keyboard">キーボードショートカット</a>
           <a href="#download">ダウンロード</a>
+          <a href="./en/index.html" class="lang-switch" onclick="sessionStorage.setItem('lang-selected', 'en')">English</a>
         </nav>
       </div>
     </header>
@@ -42,7 +43,7 @@
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Windows 10/11 対応</p>
-            <h1>画像ビューアに、Chromeの操作感を。</h1>
+            <h1>画像ビューアに、<br />Chromeの操作感を。</h1>
             <p class="lead">
               <strong>PicSum</strong> は、<strong>GPUによる超高速描画</strong>と徹底的にチューニングされた<strong>0.2秒を切る高速起動</strong>、そして <strong>Google Chrome</strong> と遜色ない直感的なタブ操作を兼ね備えた 画像ビューアです。
               圧倒的なスピードと馴染みのある操作性で、画像閲覧のストレスをゼロにします。
@@ -258,6 +259,16 @@
 
     <script>
       (function () {
+        // Redirection based on browser language
+        var lang = navigator.language || navigator.userLanguage;
+        var hasSelectedLang = sessionStorage.getItem("lang-selected");
+
+        if (!hasSelectedLang && lang && !lang.startsWith("ja")) {
+          sessionStorage.setItem("lang-selected", "en");
+          window.location.href = "./en/index.html";
+          return;
+        }
+
         var y = document.getElementById("y");
         if (y) {
           y.textContent = new Date().getFullYear();

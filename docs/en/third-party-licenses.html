@@ -1,19 +1,19 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PicSum - サードパーティーライセンス</title>
+    <title>PicSum - Third-party Licenses</title>
     <meta
       name="description"
-      content="PicSum で利用しているサードパーティーライブラリとそのライセンスの一覧です。"
+      content="List of third-party libraries and their licenses used in PicSum."
     />
     <meta name="color-scheme" content="dark light" />
-    <link rel="icon" href="./assets/icon.png" />
-    <link rel="apple-touch-icon" href="./assets/icon.png" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="../assets/icon.png" />
+    <link rel="apple-touch-icon" href="../assets/icon.png" />
+    <link rel="stylesheet" href="../styles.css" />
     <style>
-      /* ライセンスボタン */
+      /* License Button */
       .license-toggle-btn {
         display: inline-flex;
         align-items: center;
@@ -45,7 +45,7 @@
         transform: rotate(180deg);
       }
 
-      /* インライン表示エリア */
+      /* Inline display area */
       .license-details {
         display: grid;
         grid-template-rows: 0fr;
@@ -87,22 +87,22 @@
     </style>
   </head>
   <body>
-    <a class="skip" href="#main">本文へスキップ</a>
+    <a class="skip" href="#main">Skip to content</a>
 
     <header class="site-header">
       <div class="container header-inner">
-        <a href="./index.html" class="brand" style="text-decoration: none; color: inherit;">
+        <a href="../index.html" class="brand" style="text-decoration: none; color: inherit;">
           <div class="logo">
-            <img src="./assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
+            <img src="../assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
           </div>
           <div class="brand-text">
             <div class="brand-name">PicSum</div>
-            <div class="brand-sub">Windows デスクトップ画像ビューア</div>
+            <div class="brand-sub">Windows Desktop Image Viewer</div>
           </div>
         </a>
-        <nav class="nav" aria-label="ナビゲーション">
-          <a href="./index.html">トップページ</a>
-          <a href="./en/third-party-licenses.html" class="lang-switch" onclick="sessionStorage.setItem('lang-selected', 'en')">English</a>
+        <nav class="nav" aria-label="Navigation">
+          <a href="./index.html">Top Page</a>
+          <a href="../third-party-licenses.html" class="lang-switch" onclick="sessionStorage.setItem('lang-selected', 'ja')">日本語</a>
         </nav>
       </div>
     </header>
@@ -110,16 +110,16 @@
     <main id="main">
       <section class="section">
         <div class="container">
-          <h1>サードパーティーライセンス</h1>
+          <h1>Third-party Licenses</h1>
 
           <section class="license-item">
             <h2>MemoryPack</h2>
             <ul>
-              <li><a href="https://github.com/Cysharp/MemoryPack" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
+              <li><a href="https://github.com/Cysharp/MemoryPack" target="_blank" rel="noreferrer">Project Page</a></li>
               <li>
                 <button class="license-toggle-btn" data-license="mit" aria-expanded="false">
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
-                  MIT ライセンス
+                  MIT License
                 </button>
                 <div class="license-details" id="details-mit">
                   <div class="license-details-content">
@@ -134,11 +134,11 @@
           <section class="license-item">
             <h2>MetadataExtractor</h2>
             <ul>
-              <li><a href="https://github.com/drewnoakes/metadata-extractor-dotnet" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
+              <li><a href="https://github.com/drewnoakes/metadata-extractor-dotnet" target="_blank" rel="noreferrer">Project Page</a></li>
               <li>
                 <button class="license-toggle-btn" data-license="apache2" aria-expanded="false">
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
-                  Apache 2.0 ライセンス
+                  Apache 2.0 License
                 </button>
                 <div class="license-details" id="details-apache2">
                   <div class="license-details-content">
@@ -153,11 +153,11 @@
           <section class="license-item">
             <h2>NLog</h2>
             <ul>
-              <li><a href="https://nlog-project.org/" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
+              <li><a href="https://nlog-project.org/" target="_blank" rel="noreferrer">Project Page</a></li>
               <li>
                 <button class="license-toggle-btn" data-license="bsd3" aria-expanded="false">
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
-                  BSD 3-Clause ライセンス
+                  BSD 3-Clause License
                 </button>
                 <div class="license-details" id="details-bsd3">
                   <div class="license-details-content">
@@ -172,11 +172,11 @@
           <section class="license-item">
             <h2>OpenCvSharp4.Extensions</h2>
             <ul>
-              <li><a href="https://github.com/shimat/opencvsharp" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
+              <li><a href="https://github.com/shimat/opencvsharp" target="_blank" rel="noreferrer">Project Page</a></li>
               <li>
                 <button class="license-toggle-btn" data-license="apache2-opencv-ext" aria-expanded="false">
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
-                  Apache 2.0 ライセンス
+                  Apache 2.0 License
                 </button>
                 <div class="license-details" id="details-apache2-opencv-ext">
                   <div class="license-details-content">
@@ -191,11 +191,11 @@
           <section class="license-item">
             <h2>OpenCvSharp4.Windows</h2>
             <ul>
-              <li><a href="https://github.com/shimat/opencvsharp" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
+              <li><a href="https://github.com/shimat/opencvsharp" target="_blank" rel="noreferrer">Project Page</a></li>
               <li>
                 <button class="license-toggle-btn" data-license="apache2-opencv-win" aria-expanded="false">
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
-                  Apache 2.0 ライセンス
+                  Apache 2.0 License
                 </button>
                 <div class="license-details" id="details-apache2-opencv-win">
                   <div class="license-details-content">
@@ -210,11 +210,11 @@
           <section class="license-item">
             <h2>SkiaSharp.Views.WindowsForms</h2>
             <ul>
-              <li><a href="https://github.com/mono/SkiaSharp" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
+              <li><a href="https://github.com/mono/SkiaSharp" target="_blank" rel="noreferrer">Project Page</a></li>
               <li>
                 <button class="license-toggle-btn" data-license="mit-skia" aria-expanded="false">
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
-                  MIT ライセンス
+                  MIT License
                 </button>
                 <div class="license-details" id="details-mit-skia">
                   <div class="license-details-content">
@@ -229,11 +229,11 @@
           <section class="license-item">
             <h2>Svg.Skia</h2>
             <ul>
-              <li><a href="https://github.com/wieslawsoltes/Svg.Skia" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
+              <li><a href="https://github.com/wieslawsoltes/Svg.Skia" target="_blank" rel="noreferrer">Project Page</a></li>
               <li>
                 <button class="license-toggle-btn" data-license="mit-svg-skia" aria-expanded="false">
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
-                  MIT ライセンス
+                  MIT License
                 </button>
                 <div class="license-details" id="details-mit-svg-skia">
                   <div class="license-details-content">
@@ -248,11 +248,11 @@
           <section class="license-item">
             <h2>System.Data.SQLite.Core</h2>
             <ul>
-              <li><a href="https://system.data.sqlite.org/home/doc/trunk/www/index.md" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
+              <li><a href="https://system.data.sqlite.org/home/doc/trunk/www/index.md" target="_blank" rel="noreferrer">Project Page</a></li>
               <li>
                 <button class="license-toggle-btn" data-license="sqlite" aria-expanded="false">
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
-                  著作権表示
+                  Copyright Notice
                 </button>
                 <div class="license-details" id="details-sqlite">
                   <div class="license-details-content">
@@ -267,11 +267,11 @@
           <section class="license-item">
             <h2>ZLinq</h2>
             <ul>
-              <li><a href="https://github.com/Cysharp/ZLinq" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
+              <li><a href="https://github.com/Cysharp/ZLinq" target="_blank" rel="noreferrer">Project Page</a></li>
               <li>
                 <button class="license-toggle-btn" data-license="mit-zlinq" aria-expanded="false">
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
-                  MIT ライセンス
+                  MIT License
                 </button>
                 <div class="license-details" id="details-mit-zlinq">
                   <div class="license-details-content">
@@ -286,11 +286,11 @@
           <section class="license-item">
             <h2>ZLinq.FileSystem</h2>
             <ul>
-              <li><a href="https://github.com/Cysharp/ZLinq" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
+              <li><a href="https://github.com/Cysharp/ZLinq" target="_blank" rel="noreferrer">Project Page</a></li>
               <li>
                 <button class="license-toggle-btn" data-license="mit-zlinq-fs" aria-expanded="false">
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
-                  MIT ライセンス
+                  MIT License
                 </button>
                 <div class="license-details" id="details-mit-zlinq-fs">
                   <div class="license-details-content">
@@ -310,24 +310,24 @@
         <div class="footer-left">
           <a href="./index.html" class="brand-mini" style="text-decoration: none; color: inherit;">
             <div class="logo">
-              <img src="./assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
+              <img src="../assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
             </div>
             <div>
               <div class="brand-name">PicSum</div>
-              <div class="brand-sub">Windows デスクトップ画像ビューア</div>
+              <div class="brand-sub">Windows Desktop Image Viewer</div>
             </div>
           </a>
         </div>
         <div class="footer-right">
-          <a href="#">先頭に戻る</a>
+          <a href="#">Back to top</a>
         </div>
       </div>
       <div class="container fineprint">
         <span>© <span id="y"></span> nabezokodaikon</span><br />
-        <span><a href="./privacy.html">プライバシーポリシー</a></span><br />
-        <span><a href="./third-party-licenses.html">サードパーティーライセンス</a></span><br />
-        <span>使用許諾: 当方は、ユーザーが Microsoft Store の利用規約に従い、所有するデバイスにおいて本ソフトウェアをインストールおよび使用する、非独占的かつ譲渡不能な権利を許諾します。</span><br />
-        <span>免責事項: 本ソフトウェアの使用により生じた損害について、作者は一切の責任を負いません。個人の責任においてご利用ください。</span>
+        <span><a href="./privacy.html">Privacy Policy</a></span><br />
+        <span><a href="./third-party-licenses.html">Third-party Licenses</a></span><br />
+        <span>Usage License: We grant a non-exclusive, non-transferable right to install and use this software on devices you own, in accordance with the Microsoft Store Terms of Service.</span><br />
+        <span>Disclaimer: The author is not responsible for any damage caused by the use of this software. Use at your own risk.</span>
       </div>
     </footer>
 
@@ -356,7 +356,7 @@
           });
         });
 
-        // 共通のライセンステキスト
+        // Common license texts
         var commonTexts = {
           mit: [
             'MIT License',
@@ -475,7 +475,7 @@
           ].join('\n')
         };
 
-        // 個別マッピング
+        // Individual mapping
         var licenseMap = {
           'mit': { text: commonTexts.mit, copyright: '2022 Yoshifumi Kawai / Cysharp, Inc.' },
           'apache2': { text: commonTexts.apache2 },
@@ -489,7 +489,7 @@
           'mit-zlinq-fs': { text: commonTexts.mit, copyright: '2020 Yoshifumi Kawai / Cysharp, Inc.' }
         };
 
-        // 初期化：すべての pre にテキストを流し込む
+        // Initialization: populate all pre tags
         document.querySelectorAll('.license-toggle-btn').forEach(function(btn) {
           var key = btn.getAttribute('data-license');
           var entry = licenseMap[key];
@@ -503,24 +503,13 @@
             if (pre) pre.textContent = text;
           }
 
-          // クリックイベント
+          // Click event
           btn.addEventListener('click', function() {
             var targetId = 'details-' + key;
             var target = document.getElementById(targetId);
             var isExpanding = !target.classList.contains('active');
 
-            // すべて閉じる（ひとつだけ開く挙動にする場合）
-            /*
-            document.querySelectorAll('.license-details.active').forEach(function(el) {
-              if (el !== target) {
-                el.classList.remove('active');
-                el.previousElementSibling.classList.remove('active');
-                el.previousElementSibling.setAttribute('aria-expanded', 'false');
-              }
-            });
-            */
-
-            // トグル
+            // Toggle
             target.classList.toggle('active');
             btn.classList.toggle('active');
             btn.setAttribute('aria-expanded', isExpanding ? 'true' : 'false');

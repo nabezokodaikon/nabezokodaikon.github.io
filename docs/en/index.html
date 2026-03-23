@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PicSum - Image Viewer for Windows</title>
+    <meta
+      name="description"
+      content="PicSum is a desktop image viewer app for Windows. Browse images including HEIC/HEIF quickly, folder by folder. Available on Microsoft Store."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="icon" href="../assets/icon.png" />
+    <link rel="apple-touch-icon" href="../assets/icon.png" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#top">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="./index.html" class="brand" style="text-decoration: none; color: inherit;">
+          <div class="logo">
+            <img src="../assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
+          </div>
+          <div class="brand-text">
+            <div class="brand-name">PicSum</div>
+            <div class="brand-sub">Windows Desktop Image Viewer</div>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#features">Features</a>
+          <a href="#formats">Formats</a>
+          <a href="#mouse">Mouse</a>
+          <a href="#keyboard">Keyboard</a>
+          <a href="#download">Download</a>
+          <a href="../index.html" class="lang-switch" onclick="sessionStorage.setItem('lang-selected', 'ja')">日本語</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Compatible with Windows 10/11</p>
+            <h1>Experience Chrome-like navigation<br />in an image viewer.</h1>
+            <p class="lead">
+              <strong>PicSum</strong> is an image viewer that combines <strong>ultra-fast GPU-accelerated rendering</strong>, a meticulously tuned <strong>startup time of under 0.2 seconds</strong>, and <strong>intuitive tab operations</strong> comparable to Google Chrome. 
+              Eliminate the stress of image browsing with overwhelming speed and familiar operations.
+            </p>
+
+            <div class="cta-row">
+              <a
+                class="btn primary"
+                href="https://apps.microsoft.com/detail/9nk9cgn9skdb?hl=en-US&gl=US"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Get it on Microsoft Store
+              </a>
+            </div>
+
+          </div>
+
+          <div class="hero-card" aria-label="App screenshot">
+            <div class="shot" id="heroShot" role="button" tabindex="0" aria-label="Expand screenshot">
+              <img
+                src="../assets/screenshot.png"
+                alt="Image viewer app screen (thumbnails and info panel)"
+                loading="lazy"
+                decoding="async"
+                onerror="this.closest('.shot').remove()"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="container">
+          <h2>Features</h2>
+          <div class="features">
+            <article class="feature">
+              <h3>Fast GPU-accelerated Rendering</h3>
+              <p>Reduces display lag for a comfortable browsing experience.</p>
+            </article>
+            <article class="feature">
+              <h3>Fast File Loading / Instant Startup</h3>
+              <p>Meticulously tuned for smooth transitions from startup to switching images.</p>
+            </article>
+            <article class="feature">
+              <h3>Support for Spread View</h3>
+              <p>Display two pages or images side-by-side, convenient for comparison or layout checks.</p>
+            </article>
+            <article class="feature">
+              <h3>Chrome-like Tab Operations</h3>
+              <p>Switch between multiple folders or views with tabs without interrupting your workflow.</p>
+            </article>
+            <article class="feature">
+              <h3>Breadcrumb Address Bar</h3>
+              <p>Navigate through hierarchies like File Explorer to quickly reach your destination.</p>
+            </article>
+            <article class="feature">
+              <h3>Easy Folder Access</h3>
+              <p>Open folders quickly from favorite lists, browsing history, and more.</p>
+            </article>
+            <article class="feature">
+              <h3>Organization with Tagging</h3>
+              <p>Classify files with tags to help with organization and future searches.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="formats" class="section alt">
+        <div class="container">
+          <h2>Supported Formats</h2>
+          <p class="section-lead">
+            Supports the following image formats:
+          </p>
+
+          <ul class="formats" aria-label="List of supported image formats">
+            <li class="format-ext">
+              <span class="format-name">Avif</span>
+              <a class="format-req" href="https://apps.microsoft.com/detail/9mvzqvxjbq9v" target="_blank" rel="noreferrer">AV1 Video Extension</a>
+            </li>
+            <li>Bmp</li>
+            <li>Gif</li>
+            <li class="format-ext">
+              <span class="format-name">Heic / Heif</span>
+              <a class="format-req" href="https://apps.microsoft.com/detail/9pmmsr1cgpwg" target="_blank" rel="noreferrer">HEIF Image Extensions</a>
+            </li>
+            <li>Ico</li>
+            <li>Jfif</li>
+            <li>Jpeg</li>
+            <li>Jpg</li>
+            <li>Png</li>
+            <li>Svg</li>
+            <li class="format-ext">
+              <span class="format-name">Webp</span>
+              <a class="format-req" href="https://apps.microsoft.com/detail/9pg2dk419drg" target="_blank" rel="noreferrer">WebP Image Extensions</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="mouse" class="section alt">
+        <div class="container">
+          <h2>Mouse Operations</h2>
+          <ul class="shortcuts">
+            <li>Close tab: <code>Middle-click on tab</code></li>
+            <li>Switch tabs: <code>Mouse wheel on tab</code></li>
+            <li>Open item in new tab: <code>Middle-click on file list item</code></li>
+            <li>Open folder in new tab: <code>Middle-click on address bar item</code></li>
+            <li>Open homepage in new tab: <code>Middle-click on home button</code></li>
+            <li>Open star page in new tab: <code>Middle-click on star button</code></li>
+            <li>Open bookmarks in new tab: <code>Middle-click on bookmark button</code></li>
+            <li>Open history in new tab: <code>Middle-click on history button</code></li>
+            <li>Open tag page in new tab: <code>Middle-click on tag in tag list</code></li>
+            <li>Back / Forward in history: <code>Side buttons</code></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="keyboard" class="section alt">
+        <div class="container">
+          <h2>Keyboard Shortcuts</h2>
+          <ul class="shortcuts">
+            <li>Close tab: <code>Control + W</code></li>
+            <li>Open new tab: <code>Control + T</code></li>
+            <li>Open new window: <code>Control + N</code></li>
+            <li>Scroll to bottom of file list: <code>Shift + G</code></li>
+            <li>Scroll to top of file list: <code>GG</code></li>
+            <li>Switch to right tab: <code>Control + Tab</code></li>
+            <li>Switch to left tab: <code>Control + Shift + Tab</code></li>
+            <li>Go back in history: <code>Alt + Left Arrow</code></li>
+            <li>Go forward in history: <code>Alt + Right Arrow</code></li>
+            <li>Reload page: <code>Control + R / F5</code></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="download" class="section">
+        <div class="container">
+          <h2>Download</h2>
+          <p class="section-lead">
+            PicSum is available on the Microsoft Store.
+          </p>
+
+          <div class="download-grid">
+            <div class="download-card">
+              <h3>Windows</h3>
+              <p>Install from the Store.</p>
+              <div class="download-actions">
+                <a
+                  class="btn primary"
+                  href="https://apps.microsoft.com/detail/9nk9cgn9skdb?hl=en-US&gl=US"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open Microsoft Store
+                </a>
+              </div>
+              <ul class="small">
+                <li>Compatible OS: Windows 10/11</li>
+                <li>Distribution: Microsoft Store</li>
+              </ul>
+            </div>
+
+            <div class="download-card info">
+              <h3>Installation Steps</h3>
+              <ol class="small">
+                <li>Open Microsoft Store</li>
+                <li>Click "Get" or "Install"</li>
+                <li>Launch and open a folder</li>
+              </ol>
+              <p class="small muted">
+                Store display may vary in language and buttons depending on your environment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <a href="./index.html" class="brand-mini" style="text-decoration: none; color: inherit;">
+            <div class="logo">
+              <img src="../assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
+            </div>
+            <div>
+              <div class="brand-name">PicSum</div>
+              <div class="brand-sub">Windows Desktop Image Viewer</div>
+            </div>
+          </a>
+        </div>
+        <div class="footer-right">
+          <a href="#">Back to top</a>
+        </div>
+      </div>
+      <div class="container fineprint">
+        <span>© <span id="y"></span> nabezokodaikon</span><br />
+        <span><a href="./privacy.html">Privacy Policy</a></span><br />
+        <span><a href="./third-party-licenses.html">Third-party Licenses</a></span><br />
+        <span>Usage License: We grant a non-exclusive, non-transferable right to install and use this software on devices you own, in accordance with the Microsoft Store Terms of Service.</span><br />
+        <span>Disclaimer: The author is not responsible for any damage caused by the use of this software. Use at your own risk.</span>
+      </div>
+    </footer>
+
+    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-label="Enlarged image">
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+        <img id="modalImage" src="" alt="Enlarged screenshot" />
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var y = document.getElementById("y");
+        if (y) {
+          y.textContent = new Date().getFullYear();
+        }
+
+        // Smooth scroll for anchor links without changing URL hash
+        document.querySelectorAll('a[href^="#"], a[href="./index.html"]').forEach(function(anchor) {
+          anchor.addEventListener('click', function(e) {
+            var href = this.getAttribute('href');
+            
+            // If it's a link to the current index page
+            if (href === './index.html') {
+              if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+              return; 
+            }
+
+            // Normal hash links
+            if (href.startsWith('#')) {
+              e.preventDefault();
+              if (href === '#') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              } else {
+                var targetElement = document.querySelector(href);
+                if (targetElement) {
+                  targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+              }
+            }
+          });
+        });
+
+        // Lightbox Modal script
+        var modal = document.getElementById("imageModal");
+        var heroShot = document.getElementById("heroShot");
+        var modalImg = document.getElementById("modalImage");
+        var closeBtn = document.getElementById("modalClose");
+
+        if (modal && heroShot && modalImg) {
+          var sourceImg = heroShot.querySelector("img");
+          
+          function openModal() {
+            if (sourceImg) {
+              modalImg.src = sourceImg.src;
+              modal.classList.add("show");
+              document.body.style.overflow = "hidden"; // Prevent background scrolling
+              closeBtn.focus();
+            }
+          }
+
+          function closeModal() {
+            modal.classList.remove("show");
+            document.body.style.overflow = "";
+            heroShot.focus(); // Return focus
+            
+            // Wait for transition before hiding completely
+            setTimeout(function() {
+              if (!modal.classList.contains("show")) {
+                modalImg.src = "";
+              }
+            }, 200);
+          }
+
+          heroShot.addEventListener("click", openModal);
+          heroShot.addEventListener("keydown", function(e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              openModal();
+            }
+          });
+
+          closeBtn.addEventListener("click", closeModal);
+          modal.addEventListener("click", function(e) {
+            if (e.target === modal) {
+              closeModal();
+            }
+          });
+
+          document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape" && modal.classList.contains("show")) {
+              closeModal();
+            }
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
