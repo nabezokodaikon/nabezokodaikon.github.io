@@ -9,18 +9,18 @@
       content="PicSum is a desktop image viewer app for Windows. Browse images including HEIC/HEIF quickly, folder by folder. Available on Microsoft Store."
     />
     <meta name="color-scheme" content="dark light" />
-    <link rel="icon" href="../assets/icon.png" />
-    <link rel="apple-touch-icon" href="../assets/icon.png" />
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" href="./icon.png" />
+    <link rel="apple-touch-icon" href="./icon.png" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <a class="skip" href="#top">Skip to content</a>
 
     <header class="site-header">
       <div class="container header-inner">
-        <a href="./index.html" class="brand" style="text-decoration: none; color: inherit;">
+        <a href="./index-en.html" class="brand" style="text-decoration: none; color: inherit;">
           <div class="logo">
-            <img src="../assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
+            <img src="./icon.png" width="28" height="28" alt="PicSum" decoding="async" />
           </div>
           <div class="brand-text">
             <div class="brand-name">PicSum</div>
@@ -33,7 +33,7 @@
           <a href="#mouse">Mouse</a>
           <a href="#keyboard">Keyboard</a>
           <a href="#download">Download</a>
-          <a href="../index.html" class="lang-switch" onclick="sessionStorage.setItem('lang-selected', 'ja')">日本語</a>
+          <a href="./index.html" class="lang-switch" onclick="sessionStorage.setItem('lang-selected', 'ja')">日本語</a>
         </nav>
       </div>
     </header>
@@ -65,7 +65,7 @@
           <div class="hero-card" aria-label="App screenshot">
             <div class="shot" id="heroShot" role="button" tabindex="0" aria-label="Expand screenshot">
               <img
-                src="../assets/screenshot.png"
+                src="./screenshot.png"
                 alt="Image viewer app screen (thumbnails and info panel)"
                 loading="lazy"
                 decoding="async"
@@ -227,9 +227,9 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <div class="footer-left">
-          <a href="./index.html" class="brand-mini" style="text-decoration: none; color: inherit;">
+          <a href="./index-en.html" class="brand-mini" style="text-decoration: none; color: inherit;">
             <div class="logo">
-              <img src="../assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
+              <img src="./icon.png" width="28" height="28" alt="PicSum" decoding="async" />
             </div>
             <div>
               <div class="brand-name">PicSum</div>
@@ -243,8 +243,8 @@
       </div>
       <div class="container fineprint">
         <span>© <span id="y"></span> nabezokodaikon</span><br />
-        <span><a href="./privacy.html">Privacy Policy</a></span><br />
-        <span><a href="./third-party-licenses.html">Third-party Licenses</a></span><br />
+        <span><a href="./privacy-en.html">Privacy Policy</a></span><br />
+        <span><a href="./third-party-licenses-en.html">Third-party Licenses</a></span><br />
         <span>Usage License: We grant a non-exclusive, non-transferable right to install and use this software on devices you own, in accordance with the Microsoft Store Terms of Service.</span><br />
         <span>Disclaimer: The author is not responsible for any damage caused by the use of this software. Use at your own risk.</span>
       </div>
@@ -265,12 +265,12 @@
         }
 
         // Smooth scroll for anchor links without changing URL hash
-        document.querySelectorAll('a[href^="#"], a[href="./index.html"]').forEach(function(anchor) {
+        document.querySelectorAll('a[href^="#"], a[href="./index-en.html"]').forEach(function(anchor) {
           anchor.addEventListener('click', function(e) {
             var href = this.getAttribute('href');
             
             // If it's a link to the current index page
-            if (href === './index.html') {
+            if (href === './index-en.html') {
               if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });

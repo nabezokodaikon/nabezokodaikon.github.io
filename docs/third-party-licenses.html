@@ -9,8 +9,8 @@
       content="PicSum で利用しているサードパーティーライブラリとそのライセンスの一覧です。"
     />
     <meta name="color-scheme" content="dark light" />
-    <link rel="icon" href="./assets/icon.png" />
-    <link rel="apple-touch-icon" href="./assets/icon.png" />
+    <link rel="icon" href="./icon.png" />
+    <link rel="apple-touch-icon" href="./icon.png" />
     <link rel="stylesheet" href="./styles.css" />
     <style>
       /* ライセンスボタン */
@@ -93,7 +93,7 @@
       <div class="container header-inner">
         <a href="./index.html" class="brand" style="text-decoration: none; color: inherit;">
           <div class="logo">
-            <img src="./assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
+            <img src="./icon.png" width="28" height="28" alt="PicSum" decoding="async" />
           </div>
           <div class="brand-text">
             <div class="brand-name">PicSum</div>
@@ -102,7 +102,7 @@
         </a>
         <nav class="nav" aria-label="ナビゲーション">
           <a href="./index.html">トップページ</a>
-          <a href="./en/third-party-licenses.html" class="lang-switch" onclick="sessionStorage.setItem('lang-selected', 'en')">English</a>
+          <a href="./third-party-licenses-en.html" class="lang-switch" onclick="sessionStorage.setItem('lang-selected', 'en')">English</a>
         </nav>
       </div>
     </header>
@@ -310,7 +310,7 @@
         <div class="footer-left">
           <a href="./index.html" class="brand-mini" style="text-decoration: none; color: inherit;">
             <div class="logo">
-              <img src="./assets/icon.png" width="28" height="28" alt="PicSum" decoding="async" />
+              <img src="./icon.png" width="28" height="28" alt="PicSum" decoding="async" />
             </div>
             <div>
               <div class="brand-name">PicSum</div>
@@ -333,6 +333,16 @@
 
     <script>
       (function () {
+        // Redirection based on browser language
+        var lang = navigator.language || navigator.userLanguage;
+        var hasSelectedLang = sessionStorage.getItem("lang-selected");
+
+        if (!hasSelectedLang && lang && !lang.startsWith("ja")) {
+          sessionStorage.setItem("lang-selected", "en");
+          window.location.href = "./third-party-licenses-en.html";
+          return;
+        }
+
         var y = document.getElementById("y");
         if (y) {
           y.textContent = new Date().getFullYear();
