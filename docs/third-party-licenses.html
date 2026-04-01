@@ -113,6 +113,25 @@
           <h1>サードパーティーライセンス</h1>
 
           <section class="license-item">
+            <h2>BrycensRanch.NeoSolve.ImageSharp.AVIF</h2>
+            <ul>
+              <li><a href="https://github.com/BrycensRanch/NeoSolve.ImageSharp.AVIF" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
+              <li>
+                <button class="license-toggle-btn" data-license="mit-neosolve" aria-expanded="false">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
+                  MIT ライセンス
+                </button>
+                <div class="license-details" id="details-mit-neosolve">
+                  <div class="license-details-content">
+                    <span class="license-details-title">MIT License</span>
+                    <pre></pre>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="license-item">
             <h2>MemoryPack</h2>
             <ul>
               <li><a href="https://github.com/Cysharp/MemoryPack" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
@@ -200,6 +219,25 @@
                 <div class="license-details" id="details-apache2-opencv-win">
                   <div class="license-details-content">
                     <span class="license-details-title">Apache License, Version 2.0</span>
+                    <pre></pre>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="license-item">
+            <h2>SixLabors.ImageSharp</h2>
+            <ul>
+              <li><a href="https://github.com/SixLabors/ImageSharp" target="_blank" rel="noreferrer">プロジェクトページ</a></li>
+              <li>
+                <button class="license-toggle-btn" data-license="slsl" aria-expanded="false">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.427 7.427l3.396 3.396 3.396-3.396a.75.75 0 1 1 1.06 1.06l-3.926 3.926a.75.75 0 0 1-1.06 0L3.367 8.487a.75.75 0 1 1 1.06-1.06z"/></svg>
+                  Six Labors Split ライセンス
+                </button>
+                <div class="license-details" id="details-slsl">
+                  <div class="license-details-content">
+                    <span class="license-details-title">Six Labors Split License version 1.0</span>
                     <pre></pre>
                   </div>
                 </div>
@@ -482,12 +520,58 @@
             'public domain dedications on file.',
             '',
             'Source: https://www.sqlite.org/copyright.html'
+          ].join('\n'),
+          slsl: [
+            'Six Labors Split License',
+            'Version 1.0, June 2022',
+            'Copyright (c) Six Labors',
+            '',
+            'TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION',
+            '',
+            '1. Definitions.',
+            '',
+            '   "You" (or "Your") shall mean an individual or Legal Entity exercising permissions granted by this License.',
+            '',
+            '   "Source" form shall mean the preferred form for making modifications, including but not limited to software source',
+            '    code, documentation source, and configuration files.',
+            '',
+            '   "Object" form shall mean any form resulting from mechanical transformation or translation of a Source form, including',
+            '    but not limited to compiled object code, generated documentation, and conversions to other media types.',
+            '',
+            '   "Work" (or "Works") shall mean any Six Labors software made available under the License, as indicated by a',
+            '   copyright notice that is included in or attached to the work.',
+            '',
+            '   "Direct Package Dependency" shall mean any Work in Source or Object form that is installed directly by You.',
+            '',
+            '   "Transitive Package Dependency" shall mean any Work in Object form that is installed indirectly by a third party',
+            '    dependency unrelated to Six Labors.',
+            '',
+            '2. License',
+            '',
+            '   Works in Source or Object form are split licensed and may be licensed under the Apache License, Version 2.0 or a',
+            '   Six Labors Commercial Use License.',
+            '',
+            '   Licenses are granted based upon You meeting the qualified criteria as stated. Once granted,',
+            '   You must reference the granted license only in all documentation.',
+            '',
+            '   Works in Source or Object form are licensed to You under the Apache License, Version 2.0 if.',
+            '',
+            '   - You are consuming the Work in for use in software licensed under an Open Source or Source Available license.',
+            '   - You are consuming the Work as a Transitive Package Dependency.',
+            '   - You are consuming the Work as a Direct Package Dependency in the capacity of a For-profit company/individual with',
+            '     less than 1M USD annual gross revenue.',
+            '   - You are consuming the Work as a Direct Package Dependency in the capacity of a Non-profit organization',
+            '     or Registered Charity.',
+            '',
+            '   For all other scenarios, Works in Source or Object form are licensed to You under the Six Labors Commercial License',
+            '   which may be purchased by visiting https://sixlabors.com/pricing/.'
           ].join('\n')
         };
 
         // 個別マッピング
         var licenseMap = {
           'mit': { text: commonTexts.mit, copyright: '2022 Yoshifumi Kawai / Cysharp, Inc.' },
+          'mit-neosolve': { text: commonTexts.mit, copyright: '2024 Brycen\'s Ranch' },
           'apache2': { text: commonTexts.apache2 },
           'bsd3': { text: commonTexts.bsd3, copyright: '2004-2024 Jaroslaw Kowalski, Kim Christensen, Julian Verdurmen' },
           'apache2-opencv-ext': { text: commonTexts.apache2 },
@@ -495,6 +579,7 @@
           'mit-skia': { text: commonTexts.mit, copyright: '2015-2016 Xamarin, Inc, Copyright (c) 2017-2018 Microsoft Corp.' },
           'mit-svg-skia': { text: commonTexts.mit, copyright: '2020 Wiesław Šoltés' },
           'sqlite': { text: commonTexts.sqlite },
+          'slsl': { text: commonTexts.slsl },
           'mit-zlinq': { text: commonTexts.mit, copyright: '2020 Yoshifumi Kawai / Cysharp, Inc.' },
           'mit-zlinq-fs': { text: commonTexts.mit, copyright: '2020 Yoshifumi Kawai / Cysharp, Inc.' }
         };
