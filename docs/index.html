@@ -297,6 +297,15 @@
       </div>
     </div>
 
+    <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-label="デモ動画再生">
+      <div class="modal-content video-modal-content">
+        <button class="modal-close" id="videoModalClose" aria-label="閉じる">&times;</button>
+        <div class="video-wrapper">
+          <iframe id="modalVideo" src="" title="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
     <script>
       (function () {
         // Redirection based on browser language
@@ -350,12 +359,7 @@
         var closeBtn = document.getElementById("modalClose");
 
         if (modal && heroShot && modalImg) {
-          var originalShotHTML = heroShot.innerHTML;
-          
           function openModal() {
-            if (heroShot.classList.contains("has-video")) {
-              return; // Do nothing if video is playing
-            }
             var sourceImg = heroShot.querySelector("img");
             if (sourceImg) {
               modalImg.src = sourceImg.src;
@@ -394,37 +398,48 @@
           });
 
           document.addEventListener("keydown", function(e) {
-            if (e.key === "Escape" && modal.classList.contains("show")) {
-              closeModal();
+            if (e.key === "Escape") {
+              if (modal.classList.contains("show")) {
+                closeModal();
+              } else if (videoModal && videoModal.classList.contains("show")) {
+                closeVideoModal();
+              }
             }
           });
 
           // Video Playback Logic
+          var videoModal = document.getElementById("videoModal");
+          var videoCloseBtn = document.getElementById("videoModalClose");
+          var modalVideo = document.getElementById("modalVideo");
           var videoItems = document.querySelectorAll(".video-item");
-          
-          function playVideo(videoId, title) {
-            heroShot.classList.add("has-video");
-            heroShot.innerHTML = 
-              '<div class="video-wrapper-inline">' +
-                '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" title="' + title + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>' +
-                '<button class="restore-screenshot" aria-label="スクリーンショットに戻す" title="スクリーンショットに戻す">✕</button>' +
-              '</div>';
-            
-            // Focus on the restore button for accessibility
-            var restoreBtn = heroShot.querySelector(".restore-screenshot");
-            if (restoreBtn) {
-              restoreBtn.focus();
-              restoreBtn.addEventListener("click", function(e) {
-                e.stopPropagation();
-                restoreScreenshot();
-              });
+          var activeVideoTrigger = null;
+
+          function openVideoModal(videoId, title) {
+            if (videoModal && modalVideo) {
+              modalVideo.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+              modalVideo.title = title;
+              videoModal.classList.add("show");
+              document.body.style.overflow = "hidden"; // Prevent background scrolling
+              activeVideoTrigger = document.activeElement;
+              videoCloseBtn.focus();
             }
           }
 
-          function restoreScreenshot() {
-            heroShot.classList.remove("has-video");
-            heroShot.innerHTML = originalShotHTML;
-            heroShot.focus();
+          function closeVideoModal() {
+            if (videoModal && modalVideo) {
+              videoModal.classList.remove("show");
+              document.body.style.overflow = "";
+              if (activeVideoTrigger) {
+                activeVideoTrigger.focus();
+              }
+              // Wait for transition before hiding completely
+              setTimeout(function() {
+                if (!videoModal.classList.contains("show")) {
+                  modalVideo.src = "";
+                  modalVideo.title = "";
+                }
+              }, 200);
+            }
           }
 
           videoItems.forEach(function(item) {
@@ -432,16 +447,28 @@
             var title = item.querySelector(".video-title").textContent;
             
             item.addEventListener("click", function() {
-              playVideo(videoId, title);
+              openVideoModal(videoId, title);
             });
             
             item.addEventListener("keydown", function(e) {
               if (e.key === "Enter" || e.key === " ") {
                 e.preventDefault();
-                playVideo(videoId, title);
+                openVideoModal(videoId, title);
               }
             });
           });
+
+          if (videoCloseBtn) {
+            videoCloseBtn.addEventListener("click", closeVideoModal);
+          }
+
+          if (videoModal) {
+            videoModal.addEventListener("click", function(e) {
+              if (e.target === videoModal) {
+                closeVideoModal();
+              }
+            });
+          }
         }
       })();
     </script>
