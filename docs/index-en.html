@@ -62,7 +62,7 @@
 
           </div>
 
-          <div class="hero-card" aria-label="App screenshot">
+          <div class="hero-card" aria-label="App screenshot and demo videos">
             <div class="shot" id="heroShot" role="button" tabindex="0" aria-label="Expand screenshot">
               <img
                 src="./screenshot.png"
@@ -71,6 +71,38 @@
                 decoding="async"
                 onerror="this.closest('.shot').remove()"
               />
+            </div>
+            <div class="hero-videos">
+              <div class="hero-videos-title">Feature Demo Videos</div>
+              <div class="video-grid">
+                <div class="video-item" data-video-id="8fNt2JpqcRY" tabindex="0" role="button" aria-label="Play video: Chrome-like Tab Operations">
+                  <div class="video-thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/8fNt2JpqcRY/mqdefault.jpg" alt="Chrome-like Tab Operations" />
+                    <div class="play-overlay">
+                      <span class="play-icon">▶</span>
+                    </div>
+                  </div>
+                  <div class="video-title">Chrome-like Tab Operations</div>
+                </div>
+                <div class="video-item" data-video-id="vfQKjrASqTo" tabindex="0" role="button" aria-label="Play video: High-speed Image Switching">
+                  <div class="video-thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/vfQKjrASqTo/mqdefault.jpg" alt="High-speed Image Switching" />
+                    <div class="play-overlay">
+                      <span class="play-icon">▶</span>
+                    </div>
+                  </div>
+                  <div class="video-title">High-speed Image Switching</div>
+                </div>
+                <div class="video-item" data-video-id="EPG6SdwrUxU" tabindex="0" role="button" aria-label="Play video: Image Editing">
+                  <div class="video-thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/EPG6SdwrUxU/mqdefault.jpg" alt="Image Editing" />
+                    <div class="play-overlay">
+                      <span class="play-icon">▶</span>
+                    </div>
+                  </div>
+                  <div class="video-title">Image Editing</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -308,9 +340,13 @@
         var closeBtn = document.getElementById("modalClose");
 
         if (modal && heroShot && modalImg) {
-          var sourceImg = heroShot.querySelector("img");
+          var originalShotHTML = heroShot.innerHTML;
           
           function openModal() {
+            if (heroShot.classList.contains("has-video")) {
+              return; // Do nothing if video is playing
+            }
+            var sourceImg = heroShot.querySelector("img");
             if (sourceImg) {
               modalImg.src = sourceImg.src;
               modal.classList.add("show");
@@ -351,6 +387,50 @@
             if (e.key === "Escape" && modal.classList.contains("show")) {
               closeModal();
             }
+          });
+
+          // Video Playback Logic
+          var videoItems = document.querySelectorAll(".video-item");
+          
+          function playVideo(videoId, title) {
+            heroShot.classList.add("has-video");
+            heroShot.innerHTML = 
+              '<div class="video-wrapper-inline">' +
+                '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" title="' + title + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>' +
+                '<button class="restore-screenshot" aria-label="Back to screenshot" title="Back to screenshot">✕</button>' +
+              '</div>';
+            
+            // Focus on the restore button for accessibility
+            var restoreBtn = heroShot.querySelector(".restore-screenshot");
+            if (restoreBtn) {
+              restoreBtn.focus();
+              restoreBtn.addEventListener("click", function(e) {
+                e.stopPropagation();
+                restoreScreenshot();
+              });
+            }
+          }
+
+          function restoreScreenshot() {
+            heroShot.classList.remove("has-video");
+            heroShot.innerHTML = originalShotHTML;
+            heroShot.focus();
+          }
+
+          videoItems.forEach(function(item) {
+            var videoId = item.getAttribute("data-video-id");
+            var title = item.querySelector(".video-title").textContent;
+            
+            item.addEventListener("click", function() {
+              playVideo(videoId, title);
+            });
+            
+            item.addEventListener("keydown", function(e) {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                playVideo(videoId, title);
+              }
+            });
           });
         }
       })();
