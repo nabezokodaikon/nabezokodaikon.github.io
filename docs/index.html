@@ -43,7 +43,7 @@
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Windows 10/11 対応</p>
-            <h1>ただただシンプルに、<br />高速に、画像管理を。</h1>
+            <h1>ただただシンプルに、<br />高速に、画像管理</h1>
             <p class="lead">
               PicSumは直感的に操作でき、高速で動作する画像管理アプリです。<br />
               画像管理、画像閲覧のストレスをゼロにします。
@@ -62,7 +62,7 @@
 
           </div>
 
-          <div class="hero-card" aria-label="アプリのスクリーンショットとデモ動画">
+          <div class="hero-card" aria-label="アプリのスクリーンショット">
             <div class="shot" id="heroShot" role="button" tabindex="0" aria-label="スクリーンショットを拡大表示">
               <img
                 src="./screenshot.png"
@@ -71,38 +71,6 @@
                 decoding="async"
                 onerror="this.closest('.shot').remove()"
               />
-            </div>
-            <div class="hero-videos">
-              <div class="hero-videos-title">機能紹介デモ動画</div>
-              <div class="video-grid">
-                <div class="video-item" data-video-id="8fNt2JpqcRY" tabindex="0" role="button" aria-label="動画再生: Google Chromeと同等のタブ操作">
-                  <div class="video-thumb-wrapper">
-                    <img src="https://img.youtube.com/vi/8fNt2JpqcRY/mqdefault.jpg" alt="Google Chromeと同等のタブ操作" />
-                    <div class="play-overlay">
-                      <span class="play-icon">▶</span>
-                    </div>
-                  </div>
-                  <div class="video-title">Google Chromeと同等のタブ操作</div>
-                </div>
-                <div class="video-item" data-video-id="vfQKjrASqTo" tabindex="0" role="button" aria-label="動画再生: 高速な画像切り替え">
-                  <div class="video-thumb-wrapper">
-                    <img src="https://img.youtube.com/vi/vfQKjrASqTo/mqdefault.jpg" alt="高速な画像切り替え" />
-                    <div class="play-overlay">
-                      <span class="play-icon">▶</span>
-                    </div>
-                  </div>
-                  <div class="video-title">高速な画像切り替え</div>
-                </div>
-                <div class="video-item" data-video-id="EPG6SdwrUxU" tabindex="0" role="button" aria-label="動画再生: 画像編集">
-                  <div class="video-thumb-wrapper">
-                    <img src="https://img.youtube.com/vi/EPG6SdwrUxU/mqdefault.jpg" alt="画像編集" />
-                    <div class="play-overlay">
-                      <span class="play-icon">▶</span>
-                    </div>
-                  </div>
-                  <div class="video-title">画像編集</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -277,14 +245,7 @@
       </div>
     </div>
 
-    <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-label="デモ動画再生">
-      <div class="modal-content video-modal-content">
-        <button class="modal-close" id="videoModalClose" aria-label="閉じる">&times;</button>
-        <div class="video-wrapper">
-          <iframe id="modalVideo" src="" title="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
+
 
     <script>
       (function () {
@@ -381,74 +342,11 @@
             if (e.key === "Escape") {
               if (modal.classList.contains("show")) {
                 closeModal();
-              } else if (videoModal && videoModal.classList.contains("show")) {
-                closeVideoModal();
               }
             }
           });
 
-          // Video Playback Logic
-          var videoModal = document.getElementById("videoModal");
-          var videoCloseBtn = document.getElementById("videoModalClose");
-          var modalVideo = document.getElementById("modalVideo");
-          var videoItems = document.querySelectorAll(".video-item");
-          var activeVideoTrigger = null;
 
-          function openVideoModal(videoId, title) {
-            if (videoModal && modalVideo) {
-              modalVideo.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
-              modalVideo.title = title;
-              videoModal.classList.add("show");
-              document.body.style.overflow = "hidden"; // Prevent background scrolling
-              activeVideoTrigger = document.activeElement;
-              videoCloseBtn.focus();
-            }
-          }
-
-          function closeVideoModal() {
-            if (videoModal && modalVideo) {
-              videoModal.classList.remove("show");
-              document.body.style.overflow = "";
-              if (activeVideoTrigger) {
-                activeVideoTrigger.focus();
-              }
-              // Wait for transition before hiding completely
-              setTimeout(function() {
-                if (!videoModal.classList.contains("show")) {
-                  modalVideo.src = "";
-                  modalVideo.title = "";
-                }
-              }, 200);
-            }
-          }
-
-          videoItems.forEach(function(item) {
-            var videoId = item.getAttribute("data-video-id");
-            var title = item.querySelector(".video-title").textContent;
-            
-            item.addEventListener("click", function() {
-              openVideoModal(videoId, title);
-            });
-            
-            item.addEventListener("keydown", function(e) {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                openVideoModal(videoId, title);
-              }
-            });
-          });
-
-          if (videoCloseBtn) {
-            videoCloseBtn.addEventListener("click", closeVideoModal);
-          }
-
-          if (videoModal) {
-            videoModal.addEventListener("click", function(e) {
-              if (e.target === videoModal) {
-                closeVideoModal();
-              }
-            });
-          }
         }
       })();
     </script>
