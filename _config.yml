@@ -1,3 +1,4 @@
 url: "https://nabezokodaikon.github.io"
+baseurl: "/nabezokodaikon.github.io"
 plugins:
   - jekyll-sitemap
