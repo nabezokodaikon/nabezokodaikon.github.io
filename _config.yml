@@ -1,3 +1,4 @@
-repository: nabezokodaikon/nabezokodaikon.github.io
+url: "https://nabezokodaikon.github.io"
+baseurl: "/nabezokodaikon/nabezokodaikon.github.io"
 plugins:
   - jekyll-sitemap
