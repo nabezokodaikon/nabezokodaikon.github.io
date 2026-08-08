@@ -177,18 +177,62 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 14px;
+  padding: 14px 18px;
   border-radius: 14px;
-  border: 1px solid var(--border);
   background: var(--page);
   color: var(--text);
-  font-weight: 650;
-  font-size: 14px;
   transition: transform 0.08s ease, background 0.15s ease, border-color 0.15s ease;
+
+  position: relative;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden; /* はみ出た光を隠す */
+  z-index: 1;
 }
-.btn:hover {
-  transform: translateY(-1px);
+
+/* 縁を回るグラデーション（疑似要素） */
+.btn::before {
+  content: "";
+  position: absolute;
+  /* ボタンより大きくして、回転したときに角が切れないようにする */
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    #FFFFFF
+  ); /* 最後の色が光る部分になります */
+  animation: rotate-border 2s linear infinite;
+  z-index: -2;
 }
+
+/* ボタンの中面を隠すための背景（疑似要素） */
+.btn::after {
+  content: "";
+  position: absolute;
+  /* 境界線の太さ */
+  inset: 2px;
+  background: var(--header);
+  border-radius: 12px; /* 外側の角丸より少し小さくする */
+  z-index: -1;
+}
+
+/* 回転アニメーションの定義 */
+@keyframes rotate-border {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .btn.primary {
   background: var(--header);
   border-color: var(--header);
