@@ -243,8 +243,6 @@ h1 {
 }
 .section.alt {
   background: var(--page);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
 }
 
 .license-item {
