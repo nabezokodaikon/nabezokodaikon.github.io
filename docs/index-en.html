@@ -32,7 +32,6 @@
           <a href="#formats">Formats</a>
           <a href="#mouse">Mouse</a>
           <a href="#keyboard">Keyboard</a>
-          <a href="#download">Download</a>
           <a href="./index.html" class="lang-switch" onclick="sessionStorage.setItem('lang-selected', 'ja')">日本語</a>
         </nav>
       </div>
@@ -40,9 +39,8 @@
 
     <main id="main">
       <section class="hero">
-        <div class="container hero-grid">
+        <div class="container">
           <div class="hero-copy">
-            <p class="eyebrow">Compatible with Windows 10/11</p>
             <h1>Just simple, fast,<br />image management.</h1>
             <p class="lead">
               PicSum is an intuitive and fast-performing image management app.<br />
@@ -56,22 +54,23 @@
                 target="_blank"
                 rel="noreferrer"
               >
-                Get it on Microsoft Store
+                Download from Microsoft Store
               </a>
             </div>
+            <p class="eyebrow">Compatible with Windows 10/11</p>
 
           </div>
+        </div>
 
-          <div class="hero-card" aria-label="App screenshot">
-            <div class="shot" id="heroShot" role="button" tabindex="0" aria-label="Expand screenshot">
-              <img
-                src="./screenshot.png"
-                alt="Image management app screen"
-                loading="lazy"
-                decoding="async"
-                onerror="this.closest('.shot').remove()"
-              />
-            </div>
+        <div class="hero-screenshot" aria-label="App screenshot">
+          <div class="shot">
+            <img
+              src="./screenshot.png"
+              alt="Image management app screen"
+              loading="lazy"
+              decoding="async"
+              onerror="this.closest('.hero-screenshot').remove()"
+            />
           </div>
         </div>
       </section>
@@ -181,41 +180,17 @@
 
       <section id="download" class="section">
         <div class="container">
-          <h2>Download</h2>
-          <p class="section-lead">
-            PicSum is available on the Microsoft Store.
-          </p>
 
           <div class="download-grid">
             <div class="download-card">
-              <h3>Windows</h3>
-              <p>Install from the Store.</p>
-              <div class="download-actions">
-                <a
-                  class="btn primary"
-                  href="https://apps.microsoft.com/detail/9nk9cgn9skdb?hl=en-US&gl=US"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Open Microsoft Store
-                </a>
-              </div>
-              <ul class="small">
-                <li>Compatible OS: Windows 10/11</li>
-                <li>Distribution: Microsoft Store</li>
-              </ul>
-            </div>
-
-            <div class="download-card info">
-              <h3>Installation Steps</h3>
-              <ol class="small">
-                <li>Open Microsoft Store</li>
-                <li>Click "Get" or "Install"</li>
-                <li>Launch and open a folder</li>
-              </ol>
-              <p class="small muted">
-                Store display may vary in language and buttons depending on your environment.
-              </p>
+              <a
+                class="btn primary"
+                href="https://apps.microsoft.com/detail/9nk9cgn9skdb?hl=en-US&gl=US"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Download from Microsoft Store
+              </a>
             </div>
           </div>
         </div>
@@ -249,12 +224,7 @@
       </div>
     </footer>
 
-    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-label="Enlarged image">
-      <div class="modal-content">
-        <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
-        <img id="modalImage" src="" alt="Enlarged screenshot" />
-      </div>
-    </div>
+
 
 
 
@@ -294,61 +264,7 @@
           });
         });
 
-        // Lightbox Modal script
-        var modal = document.getElementById("imageModal");
-        var heroShot = document.getElementById("heroShot");
-        var modalImg = document.getElementById("modalImage");
-        var closeBtn = document.getElementById("modalClose");
-
-        if (modal && heroShot && modalImg) {
-          function openModal() {
-            var sourceImg = heroShot.querySelector("img");
-            if (sourceImg) {
-              modalImg.src = sourceImg.src;
-              modal.classList.add("show");
-              document.body.style.overflow = "hidden"; // Prevent background scrolling
-              closeBtn.focus();
-            }
-          }
-
-          function closeModal() {
-            modal.classList.remove("show");
-            document.body.style.overflow = "";
-            heroShot.focus(); // Return focus
-            
-            // Wait for transition before hiding completely
-            setTimeout(function() {
-              if (!modal.classList.contains("show")) {
-                modalImg.src = "";
-              }
-            }, 200);
-          }
-
-          heroShot.addEventListener("click", openModal);
-          heroShot.addEventListener("keydown", function(e) {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              openModal();
-            }
-          });
-
-          closeBtn.addEventListener("click", closeModal);
-          modal.addEventListener("click", function(e) {
-            if (e.target === modal) {
-              closeModal();
-            }
-          });
-
-          document.addEventListener("keydown", function(e) {
-            if (e.key === "Escape") {
-              if (modal.classList.contains("show")) {
-                closeModal();
-              }
-            }
-          });
-
-
-        }
+        // Lightbox Modal script removed
       })();
     </script>
   </body>
