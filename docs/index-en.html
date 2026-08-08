@@ -29,6 +29,7 @@
         </a>
         <nav class="nav" aria-label="Main navigation">
           <a href="#features">Features</a>
+          <a href="#functions">Functions</a>
           <a href="#formats">Formats</a>
           <a href="#mouse">Mouse</a>
           <a href="#keyboard">Keyboard</a>
@@ -96,9 +97,13 @@
               <p>Switch tabs or detach windows to make multitasking seamless.</p>
             </article>
           </div>
+        </div>
+      </section>
 
-          <h3 style="margin-top: 48px; margin-bottom: 16px; font-size: 20px;">Features List</h3>
-          <ul class="functions-grid">
+      <section id="functions" class="section">
+        <div class="container">
+          <h2>Functions</h2>
+          <ul class="functions-grid" aria-label="List of functions">
             <li>You can tag files and folders.</li>
             <li>You can bookmark how far you have viewed in a folder.</li>
             <li>Displays a thumbnail list at high speed.</li>
@@ -113,9 +118,6 @@
       <section id="formats" class="section alt">
         <div class="container">
           <h2>Supported Formats</h2>
-          <p class="section-lead">
-            Supports the following image formats:
-          </p>
 
           <ul class="formats" aria-label="List of supported image formats">
             <li class="format-ext">
@@ -242,7 +244,7 @@
             
             // If it's a link to the current index page
             if (href === './index-en.html') {
-              if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
+              if (window.location.pathname.endsWith('index-en.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }
