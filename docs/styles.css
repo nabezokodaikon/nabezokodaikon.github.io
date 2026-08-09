@@ -278,26 +278,24 @@ h1 {
 }
 
 .hero-screenshot {
-
   background: var(--page);
-
   overflow: hidden;
   margin-top: 8px;
   text-align: center;
+  padding: 0 16px;
 }
 
 .shot {
   background: rgba(255, 255, 255, 0.06);
   display: inline-block;
   overflow: hidden;
-
-
+  max-width: 100%;
 }
 .shot img {
   display: block;
-  width: auto;
+  width: 100%;
   height: auto;
-  max-width: none;
+  max-width: 1203px;
 }
 
 .card-note {
