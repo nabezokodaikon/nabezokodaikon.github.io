@@ -13,34 +13,67 @@
     <link rel="apple-touch-icon" href="./icon.png" />
     <link rel="stylesheet" href="./styles.css" />
     <style>
-      /* YouTube Videos Section */
+      /* Main Media Display Area */
+      .hero-display {
+        width: min(1203px, calc(100% - 32px));
+        margin: 8px auto 0;
+      }
+      .display-container {
+        position: relative;
+        width: 100%;
+        background: #000;
+        border-radius: 12px;
+        overflow: hidden;
+        aspect-ratio: 1203 / 754;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .display-container img,
+      .display-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      /* Media Grid Section (Thumbnails) */
       .hero-videos {
-        padding: 24px 0 0;
+        padding: 18px 0 0;
       }
       .video-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 18px;
         width: min(1203px, calc(100% - 32px));
         margin: 0 auto;
       }
-      @media (max-width: 860px) {
+      @media (max-width: 900px) {
+        .video-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 520px) {
         .video-grid {
           grid-template-columns: 1fr;
-          max-width: 680px;
+          max-width: 480px;
         }
       }
       .video-item {
         border-radius: 12px;
         overflow: hidden;
         background: #000;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .video-item:hover {
+        transform: translateY(-2px);
       }
       .video-thumb {
         position: relative;
-        cursor: pointer;
         aspect-ratio: 16 / 9;
         overflow: hidden;
-        border-radius: 12px;
+        border-radius: 10px;
       }
       .video-thumb img {
         width: 100%;
@@ -66,15 +99,6 @@
       }
       .video-thumb:hover .video-play-btn svg {
         transform: scale(1.1);
-      }
-      .video-player {
-        aspect-ratio: 16 / 9;
-      }
-      .video-player iframe {
-        width: 100%;
-        height: 100%;
-        display: block;
-        border-radius: 12px;
       }
     </style>
   </head>
@@ -129,51 +153,33 @@
           </div>
         </div>
 
-        <div class="hero-screenshot" aria-label="App screenshot">
-          <div class="shot">
-            <img
-              src="./screenshot.png"
-              alt="Image management app screen"
-              loading="lazy"
-              decoding="async"
-              onerror="this.closest('.hero-screenshot').remove()"
-            />
+        <div class="hero-display" aria-label="Media preview">
+          <div class="display-container" id="hero-main-viewer">
+            <img id="main-display-img" src="./screenshot.png" alt="PicSum Screenshot" />
+            <video id="main-display-video" playsinline style="display: none;"></video>
           </div>
         </div>
 
         <div class="hero-videos">
           <div class="video-grid">
-            <div class="video-item">
-              <div class="video-thumb" data-videoid="vfQKjrASqTo" role="button" tabindex="0" aria-label="Play video">
-                <img src="https://img.youtube.com/vi/vfQKjrASqTo/hqdefault.jpg" alt="PicSum Video 1" loading="lazy" />
-                <div class="video-play-btn" aria-hidden="true">
-                  <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24L27 14v20" fill="#fff"/></svg>
-                </div>
-              </div>
-              <div class="video-player" id="player-vfQKjrASqTo" hidden>
-                <iframe data-src="https://www.youtube.com/embed/vfQKjrASqTo?autoplay=1&rel=0" frameborder="0" allowfullscreen allow="autoplay; encrypted-media" title="PicSum Video 1"></iframe>
+            <div class="video-item active" data-type="image" data-src="./screenshot.png" role="button" tabindex="0" aria-label="View screenshot">
+              <div class="video-thumb">
+                <img src="./screenshot.png" alt="PicSum Screenshot" loading="lazy" />
               </div>
             </div>
-            <div class="video-item">
-              <div class="video-thumb" data-videoid="8fNt2JpqcRY" role="button" tabindex="0" aria-label="Play video">
-                <img src="https://img.youtube.com/vi/8fNt2JpqcRY/hqdefault.jpg" alt="PicSum Video 2" loading="lazy" />
-                <div class="video-play-btn" aria-hidden="true">
-                  <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24L27 14v20" fill="#fff"/></svg>
-                </div>
-              </div>
-              <div class="video-player" id="player-8fNt2JpqcRY" hidden>
-                <iframe data-src="https://www.youtube.com/embed/8fNt2JpqcRY?autoplay=1&rel=0" frameborder="0" allowfullscreen allow="autoplay; encrypted-media" title="PicSum Video 2"></iframe>
+            <div class="video-item" data-type="video" data-src="./01.mp4" role="button" tabindex="0" aria-label="Play video 1">
+              <div class="video-thumb">
+                <img src="./01.jpg" alt="PicSum Video 1" loading="lazy" />
               </div>
             </div>
-            <div class="video-item">
-              <div class="video-thumb" data-videoid="EPG6SdwrUxU" role="button" tabindex="0" aria-label="Play video">
-                <img src="https://img.youtube.com/vi/EPG6SdwrUxU/hqdefault.jpg" alt="PicSum Video 3" loading="lazy" />
-                <div class="video-play-btn" aria-hidden="true">
-                  <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24L27 14v20" fill="#fff"/></svg>
-                </div>
+            <div class="video-item" data-type="video" data-src="./02.mp4" role="button" tabindex="0" aria-label="Play video 2">
+              <div class="video-thumb">
+                <img src="./02.jpg" alt="PicSum Video 2" loading="lazy" />
               </div>
-              <div class="video-player" id="player-EPG6SdwrUxU" hidden>
-                <iframe data-src="https://www.youtube.com/embed/EPG6SdwrUxU?autoplay=1&rel=0" frameborder="0" allowfullscreen allow="autoplay; encrypted-media" title="PicSum Video 3"></iframe>
+            </div>
+            <div class="video-item" data-type="video" data-src="./03.mp4" role="button" tabindex="0" aria-label="Play video 3">
+              <div class="video-thumb">
+                <img src="./03.jpg" alt="PicSum Video 3" loading="lazy" />
               </div>
             </div>
           </div>
@@ -375,24 +381,47 @@
           });
         });
 
-        // Lightbox Modal script removed
+        // Media Switcher logic
+        var mainImg = document.getElementById('main-display-img');
+        var mainVideo = document.getElementById('main-display-video');
+        var items = document.querySelectorAll('.video-item');
 
-        // YouTube click-to-play
-        document.querySelectorAll('.video-thumb').forEach(function(thumb) {
-          function activate() {
-            var videoId = thumb.getAttribute('data-videoid');
-            var player = document.getElementById('player-' + videoId);
-            if (!player) return;
-            var iframe = player.querySelector('iframe');
-            if (iframe && !iframe.getAttribute('src')) {
-              iframe.setAttribute('src', iframe.getAttribute('data-src'));
+        items.forEach(function(item) {
+          function selectMedia() {
+            items.forEach(function(el) { el.classList.remove('active'); });
+            item.classList.add('active');
+
+            var type = item.getAttribute('data-type');
+            var src = item.getAttribute('data-src');
+
+            if (type === 'video') {
+              mainImg.style.display = 'none';
+              mainVideo.style.display = 'block';
+              if (mainVideo.getAttribute('src') !== src) {
+                mainVideo.setAttribute('src', src);
+              }
+              mainVideo.play();
+            } else {
+              mainVideo.pause();
+              mainVideo.style.display = 'none';
+              mainImg.style.display = 'block';
+              if (mainImg.getAttribute('src') !== src) {
+                mainImg.setAttribute('src', src);
+              }
             }
-            thumb.hidden = true;
-            player.hidden = false;
+
+            var mainViewer = document.getElementById('hero-main-viewer');
+            if (mainViewer && window.innerWidth <= 860) {
+              mainViewer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
           }
-          thumb.addEventListener('click', activate);
-          thumb.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
+
+          item.addEventListener('click', selectMedia);
+          item.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              selectMedia();
+            }
           });
         });
       })();
