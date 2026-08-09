@@ -12,6 +12,70 @@
     <link rel="icon" href="./icon.png" />
     <link rel="apple-touch-icon" href="./icon.png" />
     <link rel="stylesheet" href="./styles.css" />
+    <style>
+      /* YouTube Videos Section */
+      .hero-videos {
+        padding: 16px 0 0;
+      }
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        width: min(1100px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+      @media (max-width: 720px) {
+        .video-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .video-item {
+        border-radius: 12px;
+        overflow: hidden;
+        background: #000;
+      }
+      .video-thumb {
+        position: relative;
+        cursor: pointer;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border-radius: 12px;
+      }
+      .video-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: opacity 0.2s ease;
+      }
+      .video-thumb:hover img {
+        opacity: 0.85;
+      }
+      .video-play-btn {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+      }
+      .video-play-btn svg {
+        filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+        transition: transform 0.15s ease;
+      }
+      .video-thumb:hover .video-play-btn svg {
+        transform: scale(1.1);
+      }
+      .video-player {
+        aspect-ratio: 16 / 9;
+      }
+      .video-player iframe {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border-radius: 12px;
+      }
+    </style>
   </head>
   <body>
     <a class="skip" href="#top">本文へスキップ</a>
@@ -73,6 +137,44 @@
               decoding="async"
               onerror="this.closest('.hero-screenshot').remove()"
             />
+          </div>
+        </div>
+
+        <div class="hero-videos">
+          <div class="video-grid">
+            <div class="video-item">
+              <div class="video-thumb" data-videoid="vfQKjrASqTo" role="button" tabindex="0" aria-label="動画を再生">
+                <img src="https://img.youtube.com/vi/vfQKjrASqTo/hqdefault.jpg" alt="PicSum 動画 1" loading="lazy" />
+                <div class="video-play-btn" aria-hidden="true">
+                  <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24L27 14v20" fill="#fff"/></svg>
+                </div>
+              </div>
+              <div class="video-player" id="player-vfQKjrASqTo" hidden>
+                <iframe src="" data-src="https://www.youtube.com/embed/vfQKjrASqTo?autoplay=1&rel=0" frameborder="0" allowfullscreen allow="autoplay; encrypted-media" loading="lazy" title="PicSum 動画 1"></iframe>
+              </div>
+            </div>
+            <div class="video-item">
+              <div class="video-thumb" data-videoid="8fNt2JpqcRY" role="button" tabindex="0" aria-label="動画を再生">
+                <img src="https://img.youtube.com/vi/8fNt2JpqcRY/hqdefault.jpg" alt="PicSum 動画 2" loading="lazy" />
+                <div class="video-play-btn" aria-hidden="true">
+                  <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24L27 14v20" fill="#fff"/></svg>
+                </div>
+              </div>
+              <div class="video-player" id="player-8fNt2JpqcRY" hidden>
+                <iframe src="" data-src="https://www.youtube.com/embed/8fNt2JpqcRY?autoplay=1&rel=0" frameborder="0" allowfullscreen allow="autoplay; encrypted-media" loading="lazy" title="PicSum 動画 2"></iframe>
+              </div>
+            </div>
+            <div class="video-item">
+              <div class="video-thumb" data-videoid="EPG6SdwrUxU" role="button" tabindex="0" aria-label="動画を再生">
+                <img src="https://img.youtube.com/vi/EPG6SdwrUxU/hqdefault.jpg" alt="PicSum 動画 3" loading="lazy" />
+                <div class="video-play-btn" aria-hidden="true">
+                  <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24L27 14v20" fill="#fff"/></svg>
+                </div>
+              </div>
+              <div class="video-player" id="player-EPG6SdwrUxU" hidden>
+                <iframe src="" data-src="https://www.youtube.com/embed/EPG6SdwrUxU?autoplay=1&rel=0" frameborder="0" allowfullscreen allow="autoplay; encrypted-media" loading="lazy" title="PicSum 動画 3"></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -278,6 +380,25 @@
         });
 
         // Lightbox Modal script removed
+
+        // YouTube click-to-play
+        document.querySelectorAll('.video-thumb').forEach(function(thumb) {
+          function activate() {
+            var videoId = thumb.getAttribute('data-videoid');
+            var player = document.getElementById('player-' + videoId);
+            if (!player) return;
+            var iframe = player.querySelector('iframe');
+            if (iframe && !iframe.src) {
+              iframe.src = iframe.getAttribute('data-src');
+            }
+            thumb.hidden = true;
+            player.hidden = false;
+          }
+          thumb.addEventListener('click', activate);
+          thumb.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
+          });
+        });
       })();
     </script>
   </body>

@@ -532,7 +532,6 @@ h2 {
 /* Demo Video Grid styles */
 .hero-videos {
   padding: 16px;
-  border-top: 1px solid var(--border);
   background: var(--page);
 }
 
