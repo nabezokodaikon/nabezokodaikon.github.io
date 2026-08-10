@@ -447,11 +447,17 @@
 
             track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
 
-            // Pause video on inactive slides
+            // Auto play active video, pause inactive videos
             slides.forEach(function(slide, i) {
               var video = slide.querySelector('video');
               if (video) {
-                if (i !== currentIndex) {
+                if (i === currentIndex) {
+                  video.currentTime = 0;
+                  var playPromise = video.play();
+                  if (playPromise !== undefined) {
+                    playPromise.catch(function() {});
+                  }
+                } else {
                   video.pause();
                 }
               }
