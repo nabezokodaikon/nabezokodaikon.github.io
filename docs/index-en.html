@@ -166,49 +166,53 @@
         border-radius: 5px;
       }
 
-      /* Media Coverage Badge */
-      .media-badge {
+      /* Announcement Bar */
+      .announcement-bar {
+        background: rgba(101, 107, 173, 0.12);
+        border-bottom: 1px solid rgba(101, 107, 173, 0.3);
+        padding: 10px 16px;
+        text-align: center;
+      }
+      .announcement-inner {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        background: rgba(101, 107, 173, 0.12);
-        border: 1px solid rgba(101, 107, 173, 0.35);
-        padding: 5px 14px 5px 6px;
-        border-radius: 20px;
-        text-decoration: none;
-        margin-bottom: 20px;
-        transition: all 0.2s ease;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        font-size: 13px;
       }
-      .media-badge:hover {
-        background: rgba(101, 107, 173, 0.25);
-        border-color: rgba(101, 107, 173, 0.6);
-        transform: translateY(-1px);
-        box-shadow: 0 4px 14px rgba(101, 107, 173, 0.25);
-      }
-      .media-badge-tag {
+      .announcement-tag {
         background: #656bad;
         color: #ffffff;
         font-size: 11px;
         font-weight: 700;
-        padding: 3px 9px;
-        border-radius: 12px;
-        line-height: 1;
+        padding: 2px 8px;
+        border-radius: 10px;
+        line-height: 1.2;
         letter-spacing: 0.5px;
       }
-      .media-badge-text {
+      .announcement-text {
         color: #ffffff;
-        font-size: 13px;
         font-weight: 600;
-        letter-spacing: 0.2px;
       }
-      .media-badge-arrow {
+      .announcement-link {
         color: #a5a9d6;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: color 0.2s ease;
+      }
+      .announcement-link:hover {
+        color: #ffffff;
+        text-decoration: underline;
+      }
+      .announcement-link svg {
         transition: transform 0.2s ease;
       }
-      .media-badge:hover .media-badge-arrow {
+      .announcement-link:hover svg {
         transform: translateX(2px);
-        color: #ffffff;
       }
     </style>
   </head>
@@ -237,17 +241,23 @@
       </div>
     </header>
 
+    <div class="announcement-bar" role="region" aria-label="News">
+      <div class="announcement-inner">
+        <span class="announcement-tag">News</span>
+        <span class="announcement-text">PicSum was featured on Forest Watch (窓の杜)</span>
+        <a href="https://forest.watch.impress.co.jp/docs/digest/2077872.html" target="_blank" rel="noreferrer" class="announcement-link">
+          Read Article
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+
     <main id="main">
       <section class="hero">
         <div class="container">
           <div class="hero-copy">
-            <a href="https://forest.watch.impress.co.jp/docs/digest/2077872.html" target="_blank" rel="noreferrer" class="media-badge" aria-label="Read featured article on Forest Watch">
-              <span class="media-badge-tag">Featured</span>
-              <span class="media-badge-text">PicSum was featured on Forest Watch (窓の杜)</span>
-              <svg class="media-badge-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </a>
             <h1>Just simple, fast,<br />image management.</h1>
             <p class="lead">
               PicSum is an intuitive and fast-performing image management app.<br />
