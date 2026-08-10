@@ -180,39 +180,41 @@
         gap: 10px;
         flex-wrap: wrap;
         font-size: 13px;
+        text-decoration: none;
+        transition: transform 0.2s ease;
+      }
+      .announcement-inner:hover {
+        transform: translateY(-1px);
       }
       .announcement-tag {
         background: #656bad;
         color: #ffffff;
         font-size: 11px;
         font-weight: 700;
-        padding: 2px 8px;
+        padding: 3px 9px;
         border-radius: 10px;
         line-height: 1.2;
         letter-spacing: 0.5px;
+        transition: background 0.2s ease;
+      }
+      .announcement-inner:hover .announcement-tag {
+        background: #787ec9;
       }
       .announcement-text {
         color: #ffffff;
         font-weight: 600;
-      }
-      .announcement-link {
-        color: #a5a9d6;
-        text-decoration: none;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
         transition: color 0.2s ease;
       }
-      .announcement-link:hover {
-        color: #ffffff;
+      .announcement-inner:hover .announcement-text {
         text-decoration: underline;
       }
-      .announcement-link svg {
-        transition: transform 0.2s ease;
+      .announcement-arrow {
+        color: #a5a9d6;
+        transition: transform 0.2s ease, color 0.2s ease;
       }
-      .announcement-link:hover svg {
-        transform: translateX(2px);
+      .announcement-inner:hover .announcement-arrow {
+        transform: translateX(3px);
+        color: #ffffff;
       }
     </style>
   </head>
@@ -242,16 +244,13 @@
     </header>
 
     <div class="announcement-bar" role="region" aria-label="お知らせ">
-      <div class="announcement-inner">
+      <a href="https://forest.watch.impress.co.jp/docs/digest/2077872.html" target="_blank" rel="noreferrer" class="announcement-inner" aria-label="窓の杜掲載記事を見る">
         <span class="announcement-tag">News</span>
         <span class="announcement-text">窓の杜で PicSum が紹介されました</span>
-        <a href="https://forest.watch.impress.co.jp/docs/digest/2077872.html" target="_blank" rel="noreferrer" class="announcement-link">
-          記事を読む
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </a>
-      </div>
+        <svg class="announcement-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
     </div>
 
     <main id="main">
