@@ -165,6 +165,51 @@
         width: 28px;
         border-radius: 5px;
       }
+
+      /* Media Coverage Badge */
+      .media-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(101, 107, 173, 0.12);
+        border: 1px solid rgba(101, 107, 173, 0.35);
+        padding: 5px 14px 5px 6px;
+        border-radius: 20px;
+        text-decoration: none;
+        margin-bottom: 20px;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+      .media-badge:hover {
+        background: rgba(101, 107, 173, 0.25);
+        border-color: rgba(101, 107, 173, 0.6);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 14px rgba(101, 107, 173, 0.25);
+      }
+      .media-badge-tag {
+        background: #656bad;
+        color: #ffffff;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 3px 9px;
+        border-radius: 12px;
+        line-height: 1;
+        letter-spacing: 0.5px;
+      }
+      .media-badge-text {
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+      }
+      .media-badge-arrow {
+        color: #a5a9d6;
+        transition: transform 0.2s ease;
+      }
+      .media-badge:hover .media-badge-arrow {
+        transform: translateX(2px);
+        color: #ffffff;
+      }
     </style>
   </head>
   <body>
@@ -196,6 +241,13 @@
       <section class="hero">
         <div class="container">
           <div class="hero-copy">
+            <a href="https://forest.watch.impress.co.jp/docs/digest/2077872.html" target="_blank" rel="noreferrer" class="media-badge" aria-label="窓の杜掲載記事を見る">
+              <span class="media-badge-tag">メディア掲載</span>
+              <span class="media-badge-text">PicSum は 窓の杜 で紹介されています</span>
+              <svg class="media-badge-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
             <h1>ただただシンプルに、<br />高速に、画像管理</h1>
             <p class="lead">
               PicSum は直感的に操作でき、高速で動作する画像管理アプリです。<br />
