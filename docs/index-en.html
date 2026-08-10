@@ -44,6 +44,7 @@
         transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
       }
       .carousel-slide {
+        position: relative;
         min-width: 100%;
         width: 100%;
         height: 100%;
@@ -51,6 +52,33 @@
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
+      }
+      .slide-caption {
+        position: absolute;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+        background: rgba(15, 15, 25, 0.75);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: #ffffff;
+        padding: 8px 18px;
+        border-radius: 14px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        pointer-events: none;
+      }
+      @media (max-width: 600px) {
+        .slide-caption {
+          top: 10px;
+          padding: 6px 12px;
+          font-size: 12px;
+          border-radius: 10px;
+        }
       }
       .carousel-slide img,
       .carousel-slide video {
@@ -203,13 +231,16 @@
                   <img src="./screenshot.png" alt="PicSum Screenshot" />
                 </div>
                 <div class="carousel-slide">
-                  <video src="./01.mp4" controls playsinline preload="metadata" aria-label="PicSum Video 1"></video>
+                  <div class="slide-caption">Chrome-like Tab Operations</div>
+                  <video src="./01.mp4" controls playsinline preload="metadata" aria-label="Chrome-like Tab Operations"></video>
                 </div>
                 <div class="carousel-slide">
-                  <video src="./02.mp4" controls playsinline preload="metadata" aria-label="PicSum Video 2"></video>
+                  <div class="slide-caption">Fast Image Switching</div>
+                  <video src="./02.mp4" controls playsinline preload="metadata" aria-label="Fast Image Switching"></video>
                 </div>
                 <div class="carousel-slide">
-                  <video src="./03.mp4" controls playsinline preload="metadata" aria-label="PicSum Video 3"></video>
+                  <div class="slide-caption">Editing Features</div>
+                  <video src="./03.mp4" controls playsinline preload="metadata" aria-label="Editing Features"></video>
                 </div>
               </div>
             </div>
