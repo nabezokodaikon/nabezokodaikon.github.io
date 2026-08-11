@@ -1,3 +1,9 @@
 url: "https://nabezokodaikon.github.io"
 plugins:
   - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: "googleb21968474914b38c.html"
+    values:
+      sitemap: false
