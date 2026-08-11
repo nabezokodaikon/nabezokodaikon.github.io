@@ -87,6 +87,43 @@
         object-fit: contain;
         display: block;
       }
+      .slide-motivation {
+        padding: 32px 40px;
+        max-width: 860px;
+        text-align: left;
+        color: #e2e8f0;
+        line-height: 1.8;
+        overflow-y: auto;
+        max-height: 100%;
+        box-sizing: border-box;
+      }
+      .slide-motivation h2 {
+        font-size: 26px;
+        margin: 0 0 18px;
+        color: #ffffff;
+        border-bottom: 2px solid #656bad;
+        padding-bottom: 8px;
+        display: inline-block;
+      }
+      .slide-motivation p {
+        font-size: 15px;
+        margin-bottom: 12px;
+        color: #cbd5e1;
+      }
+      @media (max-width: 768px) {
+        .slide-motivation {
+          padding: 20px 24px;
+        }
+        .slide-motivation h2 {
+          font-size: 20px;
+          margin-bottom: 12px;
+        }
+        .slide-motivation p {
+          font-size: 13px;
+          margin-bottom: 8px;
+          line-height: 1.6;
+        }
+      }
       .carousel-arrow {
         position: static;
         transform: none;
@@ -233,7 +270,7 @@
           </div>
         </a>
         <nav class="nav" aria-label="主要ナビゲーション">
-          <a href="#features">特徴</a>
+          <a href="#features">機能</a>
           <a href="#formats">対応画像形式</a>
           <a href="#mouse">マウス操作</a>
           <a href="#keyboard">キーボード操作</a>
@@ -319,9 +356,23 @@
         </div>
       </section>
 
+      <section id="motivation" class="section alt">
+        <div class="container" style="max-width: 1320px;">
+          <h2 class="section-header">開発の動機</h2>
+          <div class="lead" style="line-height: 2; text-align: center; font-size: 18px;">
+            <p style="margin: 0;">
+                画像を見るとき、画像ビューアアプリとエクスプローラーを行ったり来たりするのが不便と感じたからです。<br />
+                また、複数の画像、複数のエクスプローラーウィンドウを表示していてはデスクトップが煩雑になってしまいます。<br />
+                そこで、エクスプローラーのような一覧/操作ができる機能と、タブによる切り替え/ウィンドウの分離機能を統合しました。<br />
+                PicSumの公開を開始したのは2024年ですが、実は構想と開発は Google Chrome が登場したころです。<br />
+                Google Chrome のタブ操作はとても素晴らしくて、これをぜひ作りたいと思い、開発しました。</p>
+          </div>
+        </div>
+      </section>
+
       <section id="features" class="section">
         <div class="container">
-          <h2 class="section-header">特徴</h2>
+          <h2 class="section-header">機能</h2>
           <div class="features">
             <article class="feature">
               <h3>タグ付けによるスマートなファイルの整理</h3>

@@ -87,6 +87,43 @@
         object-fit: contain;
         display: block;
       }
+      .slide-motivation {
+        padding: 32px 40px;
+        max-width: 860px;
+        text-align: left;
+        color: #e2e8f0;
+        line-height: 1.8;
+        overflow-y: auto;
+        max-height: 100%;
+        box-sizing: border-box;
+      }
+      .slide-motivation h2 {
+        font-size: 26px;
+        margin: 0 0 18px;
+        color: #ffffff;
+        border-bottom: 2px solid #656bad;
+        padding-bottom: 8px;
+        display: inline-block;
+      }
+      .slide-motivation p {
+        font-size: 15px;
+        margin-bottom: 12px;
+        color: #cbd5e1;
+      }
+      @media (max-width: 768px) {
+        .slide-motivation {
+          padding: 20px 24px;
+        }
+        .slide-motivation h2 {
+          font-size: 20px;
+          margin-bottom: 12px;
+        }
+        .slide-motivation p {
+          font-size: 13px;
+          margin-bottom: 8px;
+          line-height: 1.6;
+        }
+      }
       .carousel-arrow {
         position: static;
         transform: none;
@@ -233,7 +270,7 @@
           </div>
         </a>
         <nav class="nav" aria-label="Main navigation">
-          <a href="#features">Features</a>
+          <a href="#features">Functions</a>
           <a href="#formats">Formats</a>
           <a href="#mouse">Mouse</a>
           <a href="#keyboard">Keyboard</a>
@@ -319,9 +356,22 @@
         </div>
       </section>
 
+      <section id="motivation" class="section alt">
+        <div class="container" style="max-width: 1320px;">
+          <h2 class="section-header">Motivation for Development</h2>
+          <div class="lead" style="line-height: 2; text-align: center; font-size: 18px;">
+            <p style="margin: 0 0 8px; white-space: nowrap;">When viewing images, I found it inconvenient to constantly switch back and forth between an image viewer app and File Explorer.</p>
+            <p style="margin: 0 0 8px; white-space: nowrap;">Also, displaying multiple images and multiple Explorer windows makes the desktop cluttered.</p>
+            <p style="margin: 0 0 8px; white-space: nowrap;">Therefore, I integrated File Explorer-like list and operation features with tab-switching and window-detaching capabilities.</p>
+            <p style="margin: 0 0 8px; white-space: nowrap;">Although PicSum was released in 2024, the concept and development actually date back to around when Google Chrome first appeared.</p>
+            <p style="margin: 0; white-space: nowrap;">Google Chrome's tab operation was so fantastic that I really wanted to build this and developed it.</p>
+          </div>
+        </div>
+      </section>
+
       <section id="features" class="section">
         <div class="container">
-          <h2 class="section-header">Features</h2>
+          <h2 class="section-header">Functions</h2>
           <div class="features">
             <article class="feature">
               <h3>Smart Organization with Tagging</h3>
