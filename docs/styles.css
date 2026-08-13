@@ -596,7 +596,7 @@ h2 {
   justify-content: center;
   width: 46px;
   height: 46px;
-  border-radius: 12px;
+  border-radius: 50%;
   background: rgba(101, 107, 173, 0.15);
   color: #a5a9d6;
   flex-shrink: 0;
@@ -606,6 +606,14 @@ h2 {
   background: #656bad;
   color: #ffffff;
   transform: scale(1.08);
+}
+.contact-card--x:hover .contact-icon {
+  background: #ffffff;
+  color: #0f0f19;
+}
+.contact-card--ph:hover .contact-icon {
+  background: #FF6154;
+  color: #ffffff;
 }
 .contact-info {
   display: flex;
