@@ -567,8 +567,8 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 16px;
-  margin-top: 16px;
+  gap: 12px;
+  margin-top: 14px;
 }
 @media (max-width: 640px) {
   .contact-card-group {
@@ -579,11 +579,11 @@ h2 {
   flex: 1;
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 18px 22px;
+  gap: 12px;
+  padding: 10px 16px;
   background: var(--page);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 12px;
   color: var(--text);
   text-decoration: none;
 }
@@ -594,8 +594,8 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: rgba(101, 107, 173, 0.15);
   color: #a5a9d6;
@@ -620,17 +620,10 @@ h2 {
   flex-direction: column;
   text-align: left;
 }
-.contact-label {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--muted);
-  letter-spacing: 0.5px;
-}
 .contact-value {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 13.5px;
+  font-weight: 650;
   color: var(--text);
-  margin-top: 2px;
 }
 
 
