@@ -22,11 +22,31 @@
     <lastmod>2026-08-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://nabezokodaikon.github.io/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nabezokodaikon.github.io/privacy-en.html" />
   </url>
   <url>
     <loc>https://nabezokodaikon.github.io/privacy-en.html</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://nabezokodaikon.github.io/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nabezokodaikon.github.io/privacy-en.html" />
+  </url>
+  <url>
+    <loc>https://nabezokodaikon.github.io/third-party-licenses.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://nabezokodaikon.github.io/third-party-licenses.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nabezokodaikon.github.io/third-party-licenses-en.html" />
+  </url>
+  <url>
+    <loc>https://nabezokodaikon.github.io/third-party-licenses-en.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://nabezokodaikon.github.io/third-party-licenses.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nabezokodaikon.github.io/third-party-licenses-en.html" />
   </url>
 </urlset>
