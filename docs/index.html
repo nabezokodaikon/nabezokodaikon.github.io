@@ -414,43 +414,43 @@
           </div>
         </div>
 
-        <div class="hero-display" aria-label="メディアプレビュー">
+        <div class="hero-display" aria-label="アプリ機能メディアプレビュー" aria-roledescription="carousel">
           <div class="carousel-wrapper">
-            <button class="carousel-arrow prev" id="carousel-prev" aria-label="前へ">
+            <button class="carousel-arrow prev" id="carousel-prev" aria-label="前のスライドへ" aria-controls="carousel-track">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
               </svg>
             </button>
             <div class="display-container" id="hero-main-viewer">
-              <div class="carousel-track" id="carousel-track">
-                <div class="carousel-slide">
-                  <img src="./screenshot.png" alt="PicSum スクリーンショット" fetchpriority="high" decoding="async" />
+              <div class="carousel-track" id="carousel-track" aria-live="polite">
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="スライド 1 (全4ページ): メイン操作画面スクリーンショット">
+                  <img src="./screenshot.png" alt="PicSum Windows高速画像管理・閲覧アプリのメイン操作画面スクリーンショット" title="PicSum メイン操作画面" fetchpriority="high" decoding="async" />
                 </div>
-                <div class="carousel-slide">
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="スライド 2 (全4ページ): タブ操作デモ動画">
                   <div class="slide-caption">直感的なマルチタスク：Google Chromeと同等の快適なタブ操作・分離</div>
-                  <video src="./01.mp4" controls playsinline preload="metadata" aria-label="Google Chromeと同等の快適なタブ操作・分離"></video>
+                  <video src="./01.mp4" poster="./01.jpg" controls playsinline preload="metadata" title="PicSum タブ操作・ウィンドウ分離機能のデモ動画" aria-label="PicSum デモ動画：Google Chromeと同等の快適なタブ操作・分離機能"></video>
                 </div>
-                <div class="carousel-slide">
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="スライド 3 (全4ページ): 高速表示デモ動画">
                   <div class="slide-caption">ストレスゼロ：徹底的にチューニングされた高速な画像切り替え</div>
-                  <video src="./02.mp4" controls playsinline preload="metadata" aria-label="徹底的にチューニングされた高速な画像切り替え"></video>
+                  <video src="./02.mp4" poster="./02.jpg" controls playsinline preload="metadata" title="PicSum 超高速画像切り替えのデモ動画" aria-label="PicSum デモ動画：徹底的にチューニングされた高速な画像切り替え機能"></video>
                 </div>
-                <div class="carousel-slide">
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="スライド 4 (全4ページ): 簡易編集機能デモ動画">
                   <div class="slide-caption">充実の機能：画像をその場で手軽に調整できる簡易編集機能</div>
-                  <video src="./03.mp4" controls playsinline preload="metadata" aria-label="画像をその場で手軽に調整できる簡易編集機能"></video>
+                  <video src="./03.mp4" poster="./03.jpg" controls playsinline preload="metadata" title="PicSum 簡易画像編集機能のデモ動画" aria-label="PicSum デモ動画：画像をその場で手軽に調整できる簡易編集機能"></video>
                 </div>
               </div>
             </div>
-            <button class="carousel-arrow next" id="carousel-next" aria-label="次へ">
+            <button class="carousel-arrow next" id="carousel-next" aria-label="次のスライドへ" aria-controls="carousel-track">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
             </button>
           </div>
           <div class="carousel-dots" id="carousel-dots">
-            <button class="dot active" data-index="0" aria-label="スライド 1: スクリーンショット"></button>
-            <button class="dot" data-index="1" aria-label="スライド 2: タブ操作デモ"></button>
-            <button class="dot" data-index="2" aria-label="スライド 3: 高速表示デモ"></button>
-            <button class="dot" data-index="3" aria-label="スライド 4: 編集機能デモ"></button>
+            <button class="dot active" data-index="0" aria-label="スライド 1: メイン操作画面スクリーンショット" aria-controls="carousel-track"></button>
+            <button class="dot" data-index="1" aria-label="スライド 2: タブ操作・分離機能デモ動画" aria-controls="carousel-track"></button>
+            <button class="dot" data-index="2" aria-label="スライド 3: 超高速画像切り替えデモ動画" aria-controls="carousel-track"></button>
+            <button class="dot" data-index="3" aria-label="スライド 4: 簡易画像編集機能デモ動画" aria-controls="carousel-track"></button>
           </div>
         </div>
       </section>

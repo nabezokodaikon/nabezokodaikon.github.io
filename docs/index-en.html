@@ -413,43 +413,43 @@
           </div>
         </div>
 
-        <div class="hero-display" aria-label="Media preview">
+        <div class="hero-display" aria-label="App feature media preview" aria-roledescription="carousel">
           <div class="carousel-wrapper">
-            <button class="carousel-arrow prev" id="carousel-prev" aria-label="Previous">
+            <button class="carousel-arrow prev" id="carousel-prev" aria-label="Previous slide" aria-controls="carousel-track">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
               </svg>
             </button>
             <div class="display-container" id="hero-main-viewer">
-              <div class="carousel-track" id="carousel-track">
-                <div class="carousel-slide">
-                  <img src="./screenshot.png" alt="PicSum Screenshot" fetchpriority="high" decoding="async" />
+              <div class="carousel-track" id="carousel-track" aria-live="polite">
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 1 of 4: Main UI Screenshot">
+                  <img src="./screenshot.png" alt="PicSum fast image management app main UI screenshot for Windows" title="PicSum Main UI Screenshot" fetchpriority="high" decoding="async" />
                 </div>
-                <div class="carousel-slide">
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 of 4: Tab Operation Demo Video">
                   <div class="slide-caption">Intuitive Multitasking: Seamless Chrome-like Tab Operations & Window Detaching</div>
-                  <video src="./01.mp4" controls playsinline preload="metadata" aria-label="Seamless Chrome-like Tab Operations & Window Detaching"></video>
+                  <video src="./01.mp4" poster="./01.jpg" controls playsinline preload="metadata" title="PicSum Tab Operations & Window Detaching Demo Video" aria-label="PicSum Demo Video: Seamless Chrome-like tab operations and window detaching"></video>
                 </div>
-                <div class="carousel-slide">
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 3 of 4: High-Speed Switching Demo Video">
                   <div class="slide-caption">Zero Stress: Meticulously Tuned High-Speed Image Switching</div>
-                  <video src="./02.mp4" controls playsinline preload="metadata" aria-label="Meticulously Tuned High-Speed Image Switching"></video>
+                  <video src="./02.mp4" poster="./02.jpg" controls playsinline preload="metadata" title="PicSum Ultra-fast Image Switching Demo Video" aria-label="PicSum Demo Video: Meticulously tuned high-speed image switching"></video>
                 </div>
-                <div class="carousel-slide">
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 4 of 4: Quick Editing Demo Video">
                   <div class="slide-caption">Rich Utility: Easy Quick Image Editing Features</div>
-                  <video src="./03.mp4" controls playsinline preload="metadata" aria-label="Easy Quick Image Editing Features"></video>
+                  <video src="./03.mp4" poster="./03.jpg" controls playsinline preload="metadata" title="PicSum Quick Image Editing Features Demo Video" aria-label="PicSum Demo Video: Easy quick image editing features"></video>
                 </div>
               </div>
             </div>
-            <button class="carousel-arrow next" id="carousel-next" aria-label="Next">
+            <button class="carousel-arrow next" id="carousel-next" aria-label="Next slide" aria-controls="carousel-track">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
             </button>
           </div>
           <div class="carousel-dots" id="carousel-dots">
-            <button class="dot active" data-index="0" aria-label="Slide 1: Screenshot"></button>
-            <button class="dot" data-index="1" aria-label="Slide 2: Tab Operations Demo"></button>
-            <button class="dot" data-index="2" aria-label="Slide 3: Fast Switching Demo"></button>
-            <button class="dot" data-index="3" aria-label="Slide 4: Editing Demo"></button>
+            <button class="dot active" data-index="0" aria-label="Slide 1: Main UI Screenshot" aria-controls="carousel-track"></button>
+            <button class="dot" data-index="1" aria-label="Slide 2: Tab Operations Demo Video" aria-controls="carousel-track"></button>
+            <button class="dot" data-index="2" aria-label="Slide 3: High-Speed Switching Demo Video" aria-controls="carousel-track"></button>
+            <button class="dot" data-index="3" aria-label="Slide 4: Quick Editing Demo Video" aria-controls="carousel-track"></button>
           </div>
         </div>
       </section>
