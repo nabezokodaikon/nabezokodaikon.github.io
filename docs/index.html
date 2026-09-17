@@ -378,7 +378,7 @@
           <a href="#mouse">マウス操作</a>
           <a href="#keyboard">キーボード操作</a>
           <a href="#faq">FAQ</a>
-          <a href="./index-en.html" class="lang-switch" onclick="sessionStorage.setItem('lang-selected', 'en')">English</a>
+          <a href="./index-en.html" class="lang-switch">English</a>
         </nav>
       </div>
     </header>
@@ -699,16 +699,6 @@
 
     <script>
       (function () {
-        // Redirection based on browser language
-        var lang = navigator.language || navigator.userLanguage;
-        var hasSelectedLang = sessionStorage.getItem("lang-selected");
-
-        if (!hasSelectedLang && lang && !lang.startsWith("ja")) {
-          sessionStorage.setItem("lang-selected", "en");
-          window.location.href = "./index-en.html";
-          return;
-        }
-
         var y = document.getElementById("y");
         if (y) {
           y.textContent = new Date().getFullYear();
