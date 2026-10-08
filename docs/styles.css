@@ -803,11 +803,112 @@ h2 {
   font-weight: 700;
 }
 
-@media (max-width: 920px) {
-  .functions-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .site-header {
+    position: relative; /* スマホで縦スペースを確保 */
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 10px 0;
+  }
+
+  .brand {
+    justify-content: center;
+    min-width: unset;
+  }
+
+  .nav {
+    justify-content: center;
+    gap: 8px 12px;
+  }
+
+  .nav a {
+    font-size: 13px;
+    padding: 4px 6px;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+
+  .lead {
+    font-size: 16px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 340px;
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+
+  .cta-row {
+    margin: 14px 0 10px;
+  }
+
+  .hero {
+    padding: 30px 0 20px;
+  }
+
+  .section {
+    padding: 32px 0;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-right {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .fineprint {
+    font-size: 12px;
+    word-break: break-word;
+  }
+
+  .shortcuts li {
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
   }
 }
+
+@media (max-width: 480px) {
+  .container {
+    width: calc(100% - 16px);
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .lead {
+    font-size: 14px;
+  }
+
+  .formats {
+    grid-template-columns: 1fr;
+  }
+
+  .formats li.format-ext {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+}
+
+
 
 /* プライバシーポリシーページ */
 .privacy-policy {
@@ -847,4 +948,3 @@ h2 {
   margin: 8px 0 0;
   font-size: 14px;
 }
-
