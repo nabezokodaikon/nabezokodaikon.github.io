@@ -173,7 +173,7 @@ a {
 }
 
 h1 {
-  margin: 0 0 12px;
+  margin: 0 0 18px;
   font-size: 56px;
   line-height: 1.12;
   letter-spacing: -0.6px;
@@ -338,9 +338,9 @@ h2 {
   font-size: 26px;
 }
 
-.section-header
-{
-    text-align: center;
+.section-header {
+  text-align: center;
+  margin: 0 0 28px;
 }
 
 .section-lead {
@@ -363,6 +363,9 @@ h2 {
   background: var(--page);
   border-radius: var(--radius);
   padding: 16px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .feature h3 {
   display: flex;
@@ -370,6 +373,9 @@ h2 {
   gap: 8px;
   margin: 0 0 8px;
   font-size: 16px;
+}
+.feature h3:last-child {
+  margin-bottom: 0;
 }
 .feature-icon {
   display: inline-flex;
@@ -393,7 +399,7 @@ h2 {
 .formats {
   list-style: none;
   padding: 0;
-  margin: 18px 0 0;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
@@ -439,7 +445,7 @@ h2 {
 .shortcuts {
   list-style: none;
   padding: 0;
-  margin: 18px 0 0;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
@@ -452,17 +458,23 @@ h2 {
 .shortcuts li {
   border: 1px solid var(--border);
   border-radius: 14px;
-  padding: 10px 12px;
+  padding: 10px 14px;
   background: var(--page);
   color: #ffffff;
   font-size: 13px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 12px;
 }
 .shortcuts code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  white-space: nowrap;
 }
 
 .download-grid {
@@ -562,13 +574,17 @@ h2 {
   padding-top: 10px;
 }
 
+#download {
+  padding: 16px 0 24px;
+}
+
 /* Dedicated Contact Section */
 .contact-card-group {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 12px;
-  margin-top: 14px;
+  margin-top: 0;
 }
 @media (max-width: 640px) {
   .contact-card-group {
@@ -860,6 +876,14 @@ h2 {
 
   .section {
     padding: 32px 0;
+  }
+
+  .section-header {
+    margin: 0 0 20px;
+  }
+
+  #download {
+    padding: 12px 0 20px;
   }
 
   .footer-inner {
