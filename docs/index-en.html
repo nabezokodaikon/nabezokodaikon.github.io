@@ -6,7 +6,7 @@
     <title>PicSum View, Organize, Find</title>
     <meta
       name="description"
-      content="PicSum is an intuitive, fast-performing image management app. It eliminates the stress of managing and viewing images."
+      content="PicSum is a fast, intuitive image management app. It eliminates the stress of managing and viewing images."
     />
     <meta name="color-scheme" content="dark" />
     <link rel="canonical" href="https://nabezokodaikon.github.io/index-en.html" />
@@ -14,7 +14,7 @@
     <link rel="alternate" hreflang="en" href="https://nabezokodaikon.github.io/index-en.html" />
     <link rel="alternate" hreflang="x-default" href="https://nabezokodaikon.github.io/" />
     <meta property="og:title" content="PicSum View, Organize, Find" />
-    <meta property="og:description" content="PicSum is an intuitive, fast-performing image management app. It eliminates the stress of managing and viewing images." />
+    <meta property="og:description" content="PicSum is a fast, intuitive image management app. It eliminates the stress of managing and viewing images." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nabezokodaikon.github.io/index-en.html" />
     <meta property="og:image" content="https://nabezokodaikon.github.io/screenshot.png" />
@@ -22,7 +22,7 @@
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="PicSum View, Organize, Find" />
-    <meta name="twitter:description" content="PicSum is an intuitive, fast-performing image management app. It eliminates the stress of managing and viewing images." />
+    <meta name="twitter:description" content="PicSum is a fast, intuitive image management app. It eliminates the stress of managing and viewing images." />
     <meta name="twitter:image" content="https://nabezokodaikon.github.io/screenshot.png" />
     <script type="application/ld+json">
     {
@@ -31,7 +31,7 @@
       "name": "PicSum",
       "operatingSystem": "Windows",
       "applicationCategory": "MultimediaApplication",
-      "description": "PicSum is an intuitive, fast-performing image management app. It eliminates the stress of managing and viewing images.",
+      "description": "PicSum is a fast, intuitive image management app. It eliminates the stress of managing and viewing images.",
       "url": "https://nabezokodaikon.github.io/index-en.html",
       "image": "https://nabezokodaikon.github.io/screenshot.png",
       "screenshot": "https://nabezokodaikon.github.io/screenshot.png",
@@ -73,7 +73,7 @@
           "name": "Can I use PicSum for free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "There is a 30-day free trial, and after the trial period, it can be purchased for 300 JPY."
+            "text": "There is a 30-day free trial, and after the trial period ends, you can purchase it for 300 JPY."
           }
         },
         {
@@ -207,7 +207,7 @@
         transform: scale(1.08);
       }
       .carousel-arrow:focus-visible {
-        outline: 2px solid #656bad;
+        outline: 2px solid var(--focus);
         outline-offset: 2px;
       }
       @media (max-width: 768px) {
@@ -282,7 +282,7 @@
         transform: translateY(-1px);
       }
       .announcement-tag {
-        background: #656bad;
+        background: var(--accent);
         color: #ffffff;
         font-size: 11px;
         font-weight: 700;
@@ -293,10 +293,10 @@
         transition: background 0.2s ease;
       }
       .announcement-inner:hover .announcement-tag {
-        background: #787ec9;
+        background: var(--accent-hover);
       }
       .announcement-text {
-        color: #ffffff;
+        color: var(--text);
         font-weight: 600;
         transition: color 0.2s ease;
       }
@@ -304,7 +304,7 @@
         text-decoration: underline;
       }
       .announcement-arrow {
-        color: #a5a9d6;
+        color: var(--accent-soft);
         transition: transform 0.2s ease, color 0.2s ease;
       }
       .announcement-inner:hover .announcement-arrow {
@@ -357,7 +357,7 @@
               View, Organize, Find
             </h1>
             <p class="lead">
-              PicSum is an intuitive and fast-performing image management app.<br />
+              PicSum is a fast, intuitive image management app.<br />
               It eliminates the stress of managing and viewing images.
             </p>
 
@@ -385,11 +385,11 @@
             <div class="display-container" id="hero-main-viewer">
               <div class="carousel-track" id="carousel-track" aria-live="polite">
                 <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 1 of 4: Main UI Screenshot">
-                  <img src="./screenshot.png" alt="PicSum fast image management app main UI screenshot for Windows" title="PicSum Main UI Screenshot" fetchpriority="high" decoding="async" />
+                  <img src="./screenshot.png" alt="PicSum fast image management and viewing app main UI screenshot for Windows" title="PicSum Main UI Screenshot" fetchpriority="high" decoding="async" />
                 </div>
                 <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 of 4: Tab Operations Demo Video">
-                  <div class="slide-caption"><span class="video-badge">▶ Demo Video</span> Intuitive Multitasking: Chrome-like Tab Operations</div>
-                  <video src="./01.mp4" poster="./01.jpg" controls playsinline preload="metadata" title="PicSum Tab Operations Demo Video" aria-label="PicSum Demo Video: Chrome-like tab operations"></video>
+                  <div class="slide-caption"><span class="video-badge">▶ Demo Video</span> Intuitive Multitasking: Tab Operations on Par with Google Chrome</div>
+                  <video src="./01.mp4" poster="./01.jpg" controls playsinline preload="metadata" title="PicSum Tab Operations & Window Detaching Demo Video" aria-label="PicSum Demo Video: Tab operations on par with Google Chrome"></video>
                 </div>
                 <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 3 of 4: Ultra-fast Image Switching Demo Video">
                   <div class="slide-caption"><span class="video-badge">▶ Demo Video</span> Zero Stress: Meticulously Tuned Ultra-fast Image Switching</div>
@@ -397,7 +397,7 @@
                 </div>
                 <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 4 of 4: Quick Editing Demo Video">
                   <div class="slide-caption"><span class="video-badge">▶ Demo Video</span> Rich Features: Quick, On-the-Spot Image Editing</div>
-                  <video src="./03.mp4" poster="./03.jpg" controls playsinline preload="metadata" title="PicSum Quick Image Editing Features Demo Video" aria-label="PicSum Demo Video: Quick, on-the-spot image editing"></video>
+                  <video src="./03.mp4" poster="./03.jpg" controls playsinline preload="metadata" title="PicSum Quick Image Editing Demo Video" aria-label="PicSum Demo Video: Quick, on-the-spot image editing"></video>
                 </div>
               </div>
             </div>
@@ -421,24 +421,24 @@
           <h2 class="section-header">Features</h2>
           <div class="features">
             <article class="feature">
-              <h3>Smart Organization with Tagging</h3>
+              <h3>Smart File Organization with Tagging</h3>
               <p>Classifying files with tags helps you organize and search them easily.</p>
             </article>
             <article class="feature">
               <h3>Familiar List View</h3>
-              <p>Navigate quickly to your target folders with Windows-like operations.</p>
+              <p>Navigate quickly to your target folders with familiar Windows-style controls.</p>
             </article>
             <article class="feature">
-              <h3>Chrome-like Tab Operations</h3>
+              <h3>Tab Operations on Par with Google Chrome</h3>
               <p>Switch tabs or detach windows to make multitasking seamless.</p>
             </article>
             <article class="feature">
               <h3>Fast Loading / Quick Startup</h3>
-              <p>Meticulously tuned to ensure smooth operations from startup to image display.</p>
+              <p>Meticulously tuned to ensure smooth performance from startup to image display.</p>
             </article>
             <article class="feature">
-              <h3>Bookmark Function for Seamless Resumption</h3>
-              <p>Remembers where you left off in each folder, so you can easily pick up viewing without losing your place.</p>
+              <h3>Resume Seamlessly with Bookmarks</h3>
+              <p>Remembers the last position you viewed in each folder, so you can always pick up right where you left off.</p>
             </article>
             <article class="feature">
               <h3>Built-in Quick Image Editing</h3>
@@ -462,7 +462,7 @@
             </article>
             <article class="feature">
               <h3><span class="feature-icon feature-icon--camera">📷</span> Photo & Artwork Organization and Viewing</h3>
-              <p>Load and preview huge folders containing tens of thousands of images ultra-fast and stress-free, and browse them smoothly.</p>
+              <p>Load and preview massive folders of tens of thousands of images at ultra-high speed for smooth, stress-free browsing.</p>
             </article>
             <article class="feature">
               <h3><span class="feature-icon">📚</span> Comfortable Reference Viewing</h3>
@@ -470,7 +470,7 @@
             </article>
             <article class="feature">
               <h3><span class="feature-icon">💻</span> Multitasking Workflow</h3>
-              <p>Display multiple folders and images side-by-side smartly with intuitive Chrome-like tab switching and window detaching.</p>
+              <p>Effortlessly view multiple folders and images side by side with intuitive Chrome-like tab operations and window detaching.</p>
             </article>
           </div>
         </div>
@@ -513,12 +513,12 @@
             <li>Switch tabs: <code>Mouse wheel on tab</code></li>
             <li>Open item in new tab: <code>Middle-click on file list item</code></li>
             <li>Open folder in new tab: <code>Middle-click on address bar item</code></li>
-            <li>Open homepage in new tab: <code>Middle-click on home button</code></li>
+            <li>Open home page in new tab: <code>Middle-click on home button</code></li>
             <li>Open favorites page in new tab: <code>Middle-click on favorites button</code></li>
             <li>Open bookmarks page in new tab: <code>Middle-click on bookmarks button</code></li>
             <li>Open history page in new tab: <code>Middle-click on history button</code></li>
             <li>Open selected tag's page in new tab: <code>Middle-click on tag in tag list</code></li>
-            <li>Back / Forward in history: <code>Side buttons</code></li>
+            <li>Go back / forward in history: <code>Side buttons</code></li>
           </ul>
         </div>
       </section>
@@ -549,7 +549,7 @@
           <div class="features">
             <article class="feature">
               <h3>Q. Can I use it for free?</h3>
-              <p>A. There is a 30-day free trial, and after the trial period, it can be purchased for 300 JPY.</p>
+              <p>A. There is a 30-day free trial, and after the trial period ends, you can purchase it for 300 JPY.</p>
             </article>
             <article class="feature">
               <h3>Q. Why is there no tree view?</h3>
@@ -630,8 +630,8 @@
       <div class="container fineprint">
         <span>© <span id="y"></span> nabezokodaikon</span><br />
         <span><a href="./privacy-en.html">Privacy Policy</a></span><br />
-        <span><a href="./third-party-licenses-en.html">Third-party Licenses</a></span><br />
-        <span>License Grant: We grant a non-exclusive, non-transferable right to install and use this software on devices you own, in accordance with the Microsoft Store Terms of Service.</span><br />
+        <span><a href="./third-party-licenses-en.html">Third-Party Licenses</a></span><br />
+        <span>License Grant: We grant you a non-exclusive, non-transferable right to install and use this software on devices you own, in accordance with the Microsoft Store Terms of Service.</span><br />
         <span>Disclaimer: The author is not responsible for any damage caused by the use of this software. Use at your own risk.</span>
       </div>
     </footer>

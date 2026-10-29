@@ -99,7 +99,7 @@
           "name": "ファイルの移動/削除/名前の変更ができません。",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ファイルの変更は慎重を要する操作です。PicSumは、意図せずファイルが変更される心配をすることなく安心して利用できるよう、閲覧専用の設計になっています。ただし、ファイルの書き出し（コピー）は可能です。"
+            "text": "ファイルの変更は慎重さを要する操作です。PicSumは、意図せずファイルが変更される心配をすることなく安心して利用できるよう、閲覧専用の設計になっています。ただし、ファイルの書き出し（コピー）は可能です。"
           }
         }
       ]
@@ -209,7 +209,7 @@
         transform: scale(1.08);
       }
       .carousel-arrow:focus-visible {
-        outline: 2px solid #656bad;
+        outline: 2px solid var(--focus);
         outline-offset: 2px;
       }
       @media (max-width: 768px) {
@@ -284,7 +284,7 @@
         transform: translateY(-1px);
       }
       .announcement-tag {
-        background: #656bad;
+        background: var(--accent);
         color: #ffffff;
         font-size: 11px;
         font-weight: 700;
@@ -295,10 +295,10 @@
         transition: background 0.2s ease;
       }
       .announcement-inner:hover .announcement-tag {
-        background: #787ec9;
+        background: var(--accent-hover);
       }
       .announcement-text {
-        color: #ffffff;
+        color: var(--text);
         font-weight: 600;
         transition: color 0.2s ease;
       }
@@ -306,7 +306,7 @@
         text-decoration: underline;
       }
       .announcement-arrow {
-        color: #a5a9d6;
+        color: var(--accent-soft);
         transition: transform 0.2s ease, color 0.2s ease;
       }
       .announcement-inner:hover .announcement-arrow {
@@ -563,7 +563,7 @@
             </article>
             <article class="feature">
               <h3>Q. ファイルの移動/削除/名前の変更ができません。</h3>
-              <p>A. ファイルの変更は慎重を要する操作です。PicSumは、意図せずファイルが変更される心配をすることなく安心して利用できるよう、閲覧専用の設計になっています。ただし、ファイルの書き出し（コピー）は可能です。</p>
+              <p>A. ファイルの変更は慎重さを要する操作です。PicSumは、意図せずファイルが変更される心配をすることなく安心して利用できるよう、閲覧専用の設計になっています。ただし、ファイルの書き出し（コピー）は可能です。</p>
             </article>
           </div>
         </div>
