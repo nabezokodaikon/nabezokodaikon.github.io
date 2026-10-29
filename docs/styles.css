@@ -206,6 +206,13 @@ h1 {
   color: var(--muted);
 }
 
+.cta-sub {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -371,9 +378,6 @@ h2 {
   padding: 16px 16px 14px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-#faq .feature {
   justify-content: flex-start;
 }
 .feature h3 {
@@ -479,11 +483,29 @@ h2 {
 .shortcuts code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 12px;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 3px 8px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.06) 100%);
+  padding: 4px 9px;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+  color: #f0f3ff;
   white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.video-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #656bad;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-right: 8px;
+  vertical-align: middle;
 }
 
 .download-grid {
