@@ -29,7 +29,7 @@
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "PicSum",
-      "operatingSystem": "Windows, macOS",
+      "operatingSystem": "Windows",
       "applicationCategory": "MultimediaApplication",
       "description": "PicSum is an intuitive, fast-performing image management app. It eliminates the stress of managing and viewing images.",
       "url": "https://nabezokodaikon.github.io/index-en.html",
@@ -81,7 +81,7 @@
           "name": "Why is there no tree view?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A tree view takes up screen width and sometimes requires horizontal scrolling, which we believe reduces usability. We are currently considering alternative UI solutions."
+            "text": "A tree view takes up screen width and sometimes requires horizontal scrolling, which we believe reduces usability. We are currently considering alternative UI solutions, so if you have any ideas, please feel free to let us know!"
           }
         },
         {
@@ -94,7 +94,7 @@
         },
         {
           "@type": "Question",
-          "name": "Why cannot move, delete, or rename files?",
+          "name": "I cannot move, delete, or rename files.",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Modifying files is an operation that requires caution. PicSum is designed to be read-only so you can use it with peace of mind without worrying about unintended file modifications. However, exporting (copying) files is supported."
@@ -340,9 +340,9 @@
     </header>
 
     <div class="announcement-bar" role="region" aria-label="News">
-      <a href="https://forest.watch.impress.co.jp/docs/digest/2077872.html" target="_blank" rel="noreferrer" class="announcement-inner" aria-label="Read featured article on Forest Watch">
+      <a href="https://forest.watch.impress.co.jp/docs/digest/2077872.html" target="_blank" rel="noreferrer" class="announcement-inner" aria-label="Read the featured article on Mado no Mori">
         <span class="announcement-tag">News</span>
-        <span class="announcement-text">PicSum has been featured on Forest Watch (窓の杜)</span>
+        <span class="announcement-text">PicSum has been featured on Mado no Mori (窓の杜)</span>
         <svg class="announcement-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
@@ -371,7 +371,7 @@
                 Try for Free on Microsoft Store
               </a>
             </div>
-            <p class="cta-note">30-day free trial available / 300 JPY one-time purchase (no subscription)<br /><span class="cta-sub">Supports: Windows 10 / 11 (64-bit)</span></p>
+            <p class="cta-note">30-day free trial / 300 JPY one-time purchase after the trial (no subscription)<br /><span class="cta-sub">Supported OS: Windows 10 / 11 (64-bit)</span></p>
           </div>
         </div>
 
@@ -385,20 +385,19 @@
             <div class="display-container" id="hero-main-viewer">
               <div class="carousel-track" id="carousel-track" aria-live="polite">
                 <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 1 of 4: Main UI Screenshot">
-                  <div class="slide-caption"><span class="video-badge" style="background:#4b5267;">UI View</span> Intuitive Interface: Fast image browsing & management</div>
                   <img src="./screenshot.png" alt="PicSum fast image management app main UI screenshot for Windows" title="PicSum Main UI Screenshot" fetchpriority="high" decoding="async" />
                 </div>
                 <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 of 4: Tab Operation Demo Video">
                   <div class="slide-caption"><span class="video-badge">▶ Demo Video</span> Intuitive Multitasking: Chrome-like Tab Operations</div>
                   <video src="./01.mp4" poster="./01.jpg" controls playsinline preload="metadata" title="PicSum Tab Operations Demo Video" aria-label="PicSum Demo Video: Chrome-like tab operations"></video>
                 </div>
-                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 3 of 4: High-Speed Switching Demo Video">
-                  <div class="slide-caption"><span class="video-badge">▶ Demo Video</span> Zero Stress: Meticulously Tuned High-Speed Image Switching</div>
-                  <video src="./02.mp4" poster="./02.jpg" controls playsinline preload="metadata" title="PicSum Ultra-fast Image Switching Demo Video" aria-label="PicSum Demo Video: Meticulously tuned high-speed image switching"></video>
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 3 of 4: Ultra-fast Image Switching Demo Video">
+                  <div class="slide-caption"><span class="video-badge">▶ Demo Video</span> Zero Stress: Meticulously Tuned Ultra-fast Image Switching</div>
+                  <video src="./02.mp4" poster="./02.jpg" controls playsinline preload="metadata" title="PicSum Ultra-fast Image Switching Demo Video" aria-label="PicSum Demo Video: Meticulously tuned ultra-fast image switching"></video>
                 </div>
                 <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 4 of 4: Quick Editing Demo Video">
-                  <div class="slide-caption"><span class="video-badge">▶ Demo Video</span> Rich Utility: Easy Quick Image Editing Features</div>
-                  <video src="./03.mp4" poster="./03.jpg" controls playsinline preload="metadata" title="PicSum Quick Image Editing Features Demo Video" aria-label="PicSum Demo Video: Easy quick image editing features"></video>
+                  <div class="slide-caption"><span class="video-badge">▶ Demo Video</span> Rich Features: Quick, On-the-Spot Image Editing</div>
+                  <video src="./03.mp4" poster="./03.jpg" controls playsinline preload="metadata" title="PicSum Quick Image Editing Features Demo Video" aria-label="PicSum Demo Video: Quick, on-the-spot image editing"></video>
                 </div>
               </div>
             </div>
@@ -411,7 +410,7 @@
           <div class="carousel-dots" id="carousel-dots">
             <button class="dot active" data-index="0" aria-label="Slide 1: Main UI Screenshot" aria-controls="carousel-track"></button>
             <button class="dot" data-index="1" aria-label="Slide 2: Tab Operations Demo Video" aria-controls="carousel-track"></button>
-            <button class="dot" data-index="2" aria-label="Slide 3: High-Speed Switching Demo Video" aria-controls="carousel-track"></button>
+            <button class="dot" data-index="2" aria-label="Slide 3: Ultra-fast Image Switching Demo Video" aria-controls="carousel-track"></button>
             <button class="dot" data-index="3" aria-label="Slide 4: Quick Editing Demo Video" aria-controls="carousel-track"></button>
           </div>
         </div>
@@ -446,12 +445,8 @@
               <p>Perform basic edits like rotating and scaling right on the spot—no need to open another app.</p>
             </article>
             <article class="feature">
-              <h3>Fast Image Format Conversion</h3>
+              <h3>Image Format Conversion</h3>
               <p>Easily convert images between formats such as WebP, PNG, and JPEG to suit your needs.</p>
-            </article>
-            <article class="feature">
-              <h3>Efficient Keyboard & Mouse Controls</h3>
-              <p>Intuitive middle-click tab management and rich shortcut keys allow for ultrafast browsing.</p>
             </article>
           </div>
         </div>
@@ -466,12 +461,12 @@
               <p>Organize pose references, color schemes, compositions, and massive design asset libraries with tags for instant search and access.</p>
             </article>
             <article class="feature">
-              <h3><span class="feature-icon feature-icon--camera">📷</span> Photo & Artwork Organization</h3>
-              <p>Load and preview massive image folders with tens of thousands of files ultra-fast with zero stress.</p>
+              <h3><span class="feature-icon feature-icon--camera">📷</span> Photo & Artwork Organization and Viewing</h3>
+              <p>Load and preview huge folders containing tens of thousands of images ultra-fast and stress-free, and browse them smoothly.</p>
             </article>
             <article class="feature">
-              <h3><span class="feature-icon">📚</span> Document Reading</h3>
-              <p>With the "Bookmark" feature that remembers where you stopped in each folder, resume reading seamlessly anytime.</p>
+              <h3><span class="feature-icon">📚</span> Comfortable Reference Viewing</h3>
+              <p>The "Bookmark" feature remembers how far you've viewed in each folder, so you can seamlessly pick up where you left off at any time.</p>
             </article>
             <article class="feature">
               <h3><span class="feature-icon">💻</span> Multitasking Workflow</h3>
@@ -520,9 +515,9 @@
             <li>Open folder in new tab: <code>Middle-click on address bar item</code></li>
             <li>Open homepage in new tab: <code>Middle-click on home button</code></li>
             <li>Open favorites page in new tab: <code>Middle-click on favorites button</code></li>
-            <li>Open bookmarks in new tab: <code>Middle-click on bookmark button</code></li>
-            <li>Open history in new tab: <code>Middle-click on history button</code></li>
-            <li>Open tag page in new tab: <code>Middle-click on tag in tag list</code></li>
+            <li>Open bookmarks page in new tab: <code>Middle-click on bookmarks button</code></li>
+            <li>Open history page in new tab: <code>Middle-click on history button</code></li>
+            <li>Open selected tag's page in new tab: <code>Middle-click on tag in tag list</code></li>
             <li>Back / Forward in history: <code>Side buttons</code></li>
           </ul>
         </div>
@@ -532,18 +527,18 @@
         <div class="container">
           <h2 class="section-header">Keyboard Shortcuts</h2>
           <ul class="shortcuts">
-            <li>Close tab: <code>Control + W</code></li>
-            <li>Reopen closed tab: <code>Control + Shift + T</code></li>
-            <li>Open new tab: <code>Control + T</code></li>
-            <li>Open new window: <code>Control + N</code></li>
+            <li>Close tab: <code>Ctrl + W</code></li>
+            <li>Reopen closed tab: <code>Ctrl + Shift + T</code></li>
+            <li>Open new tab: <code>Ctrl + T</code></li>
+            <li>Open new window: <code>Ctrl + N</code></li>
             <li>Scroll to bottom of file list: <code>Shift + G</code></li>
             <li>Scroll to top of file list: <code>GG</code></li>
-            <li>Search in file list: <code>Control + F</code></li>
-            <li>Switch to right tab: <code>Control + Tab</code></li>
-            <li>Switch to left tab: <code>Control + Shift + Tab</code></li>
+            <li>Search in file list: <code>Ctrl + F</code></li>
+            <li>Switch to right tab: <code>Ctrl + Tab</code></li>
+            <li>Switch to left tab: <code>Ctrl + Shift + Tab</code></li>
             <li>Go back in history: <code>Alt + Left Arrow</code></li>
             <li>Go forward in history: <code>Alt + Right Arrow</code></li>
-            <li>Reload page: <code>Control + R / F5</code></li>
+            <li>Reload page: <code>Ctrl + R / F5</code></li>
           </ul>
         </div>
       </section>
@@ -585,7 +580,7 @@
                 Try for Free on Microsoft Store
               </a>
             </div>
-            <p class="cta-note">30-day free trial available / 300 JPY one-time purchase (no subscription)<br /><span class="cta-sub">Supports: Windows 10 / 11 (64-bit)</span></p>
+            <p class="cta-note">30-day free trial / 300 JPY one-time purchase after the trial (no subscription)<br /><span class="cta-sub">Supported OS: Windows 10 / 11 (64-bit)</span></p>
           </div>
         </div>
       </section>
